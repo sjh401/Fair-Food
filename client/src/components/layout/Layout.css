@@ -1,0 +1,31 @@
+main {
+    height: 80vh;
+    width: 100vw;
+    background-color: #e4b612;
+    color: #333432;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    background-color: #1d7dc2;
+    color: #333432;
+}
+
+footer {
+    height: 10vh;
+    width: 100vw;
+    background-color: #1d7dc2;
+    color: #333432;
+}
+
+.project-title {
+    color: #f8f7ff;
+    margin: 0;
+}
+/* color palette
+saffron - #e4b612
+jet - #333432
+star command blue - #1d7dc2
+ghost white - #f8f7ff
+firebrick - #c30c24 */
