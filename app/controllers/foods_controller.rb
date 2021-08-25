@@ -9,12 +9,12 @@ class FoodsController < ApplicationController
     render json: @foods
   end
 
-  # GET /foods/1
+  # GET /locations/1/foods/1
   def show
     render json: @food, include: :comments
   end
 
-  # POST /foods
+  # POST /locations/1/foods
   def create
     @food = Food.new(food_params)
     @food.user = @current_user

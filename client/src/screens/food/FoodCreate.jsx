@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Home() {
+export default function FoodCreate(props) {
     return (
         <div>
-            Home
+            creating food
         </div>
     )
 }

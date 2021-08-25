@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function LocationCard(props) {
+export default function About() {
     return (
         <div>
-            Location Card
+            About my love of hot dogs.
         </div>
     )
 }

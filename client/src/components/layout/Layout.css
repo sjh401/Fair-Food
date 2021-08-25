@@ -3,6 +3,7 @@ main {
     width: 100vw;
     background-color: #e4b612;
     color: #333432;
+    overflow: scroll;
 }
 
 header {
