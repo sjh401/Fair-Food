@@ -165,7 +165,7 @@ src
 | Media-Query Layout | H | 2hrs | | |
 | Clickalbe Walk-Through | H | 2hrs | | |
 | Presentation Prep | H | 2hrs | | |
-| Total | | 58hrs | | |
+| Total | | 60hrs | | |
 
 
 <br>
