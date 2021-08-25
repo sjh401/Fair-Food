@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :foods
-  resources :locations, only: [:index, :show]
+  # resources :comments
+  resources :locations, only: [ :index, :show ] do
+    resources :foods do 
+      resources :comments
+    end
+  end
   resources :users, only: :create
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'

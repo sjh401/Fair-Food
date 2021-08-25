@@ -11,13 +11,14 @@ class FoodsController < ApplicationController
 
   # GET /foods/1
   def show
-    render json: @food
+    render json: @food, include: :comments
   end
 
   # POST /foods
   def create
     @food = Food.new(food_params)
     @food.user = @current_user
+    @food.location = Location.find(params[:location_id])
     if @food.save
       render json: @food, status: :created
     else
@@ -47,6 +48,6 @@ class FoodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def food_params
-      params.require(:food).permit(:name, :cuisine, :description, :food_stall, :img_url, :rating, :location_id, :user_id)
+      params.require(:food).permit(:name, :cuisine, :description, :food_stall, :img_url, :rating)
     end
 end
