@@ -1,4 +1,4 @@
-# psychic-octo-doodle
+# Fair Food
 
 
 - [Overview](#overview)
@@ -20,40 +20,44 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
+**Fair Food** is a forum for sharing food at event locations; state fairs, ballparks, amusement parks, etc. Once registered and logged in, users will be able to create and share food items, ranking them and giving descriptions about the food. Users will also be able to comment on each others food posts to share feedback and praise.
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+The **Fair Food** MVP will have a RESTful backend with three mutable tables and one static Locations table, seeded into the database. The front-end will have nine separate screens, eight resting under a Container file where state will be stored. Users will be able to create an account and login while being authenticated throughout the app. If logged in, the user will be able to have CRUD on both the Food table and Comments table, only being able to update and delete their own content. There will be respomsive layouts set up for web, tablet, and mobile views with stying through flexbox and grid displays. The project will follow proper linting practices and be deployed through Surge and Heroku.
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- RESTful backend
+- Users, Foods, Comments, Locations tables
+- Models, Routes, Controllers for respective tables
+- Container file to store state
+- Authentication for Users
+- Full CRUD on app
+- Proper routes and switch
+- Two media queries
+- Deployement through Surge and Heroku
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+| React | Front-End Framework |
+| React Router Dom | Routing on Front-End|
+| Material-UI | Style Package |
+| Rails | Back-End Framework |
+| Axios  | API Interaction |
+| CORS | Cross-Origin Resource Sharing |
+| JWT | Token Based Authentication |
+| Bcrypt | Password Security |
+| Faker | Seeding Database |
 
 <br>
 
@@ -61,67 +65,105 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-![Dummy Link](url)
-
+![p4-wireframce - Window (7)](https://user-images.githubusercontent.com/85095722/130714931-bbeeec44-1990-43e1-b49e-a77a975aa746.png)
 - Desktop Landing
 
-![Dummy Link](url)
+![p4-wireframce - Window (6)](https://user-images.githubusercontent.com/85095722/130710969-feab2046-f95c-4024-99cb-49701016bb6e.png)
+- Login
 
-- Desktop Hero
+![p4-wireframce - Window (4)](https://user-images.githubusercontent.com/85095722/130710938-3f6f9ff3-d91a-45d5-a800-5b4caeaa85ce.png)
+- Locations
 
-![Dummy Link](url)
+![p4-wireframce - Window](https://user-images.githubusercontent.com/85095722/130710883-9d0d9c40-7b40-44f5-a656-dc78d1ec1951.png)
+- Location Details
 
-- Resource Index
+![p4-wireframce - Window (1)](https://user-images.githubusercontent.com/85095722/130711067-c1510af0-a5a4-4a9c-b533-26df621746a2.png)
+- Food Details & Comments
 
-![Dummy Link](url)
+![p4-wireframce - Window (5)](https://user-images.githubusercontent.com/85095722/130711271-3d0b6145-f871-45b3-b639-d93d499dda71.png)
+- Food Create
 
-- Resource Show
+![p4-wireframce - Window (2)](https://user-images.githubusercontent.com/85095722/130711120-9ea648b3-0458-4ead-bfb2-073ff91b8b73.png)
+- About
 
-![Dummy Link](url)
+![p4-wireframce - Window (3)](https://user-images.githubusercontent.com/85095722/130711128-a0e84b40-6a1f-4108-a720-4e7f34ca921b.png)
+- Contact
 
-- Tablet Resource Index
+![p4-wireframce - Phone X (4)](https://user-images.githubusercontent.com/85095722/130711166-ba32d70b-200d-4b5b-915a-e310287e736f.png)
+- Mobile Register
 
-![Dummy Link](url)
+![p4-wireframce - Phone X@1 600000023841858x](https://user-images.githubusercontent.com/85095722/130711949-41e0eda6-190b-470a-a711-d57f4425cca7.png)
+- Mobile Edit Food
 
-- Mobile Resource Index
+![p4-wireframce - Phone X (3)](https://user-images.githubusercontent.com/85095722/130711204-ed070224-8276-4ebe-93ed-a960b03e308b.png)
+- Mobile Contact
+
+![p4-wireframce - Tablet](https://user-images.githubusercontent.com/85095722/130711004-8ccbd336-802e-4359-b34d-2095594f03dc.png)
+- Food Detail Tablet
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
+![p4-component-tree (1)](https://user-images.githubusercontent.com/85095722/130712038-7f78eb7e-6734-4e3f-b85c-05bb59e51f19.png)
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
 #### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
 src
 |__ assets/
       |__ fonts
-      |__ graphics
       |__ images
-      |__ mockups
+|__ containers/
+      |__ Container.jsx
 |__ components/
       |__ Header.jsx
+      |__ Footer.jsx
+      |__ Layout.jsx  
+      |__ FoodCard.jsx
+      |__ LocationCard.jsx
 |__ services/
+      |__ apiConfig.js
+      |__ auth.js
+      |__ foods.js
+      |__ comments.js
 
 ```
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Repo/Branch Setup & Gem Installs | H | 2hrs | | |
+| Schema & Seed File Creation & Testing (CT) | H | 2hrs | | |
+| Models & Routes CT | H | 2hrs | | |
+| Controllers CT | H | 3hrs | | |
+| Models Construction CT | H | 1hr | | |
+| Full CRUD Databse Testing | H | 2hrs | | |
+| React Initialization | H | 1hr | | |
+| Services Files | H | 3hrs | | |
+| User Tests | H | 2hrs | | |
+| Layout Components & Landing Screen | H | 2hrs | | |
+| Container Setup | H | 3hrs | | |
+| Login & Register CT | H | 2hrs | | |
+| User Authentication CT | H | 2hrs | | |
+| Locations & Details CT | H | 2hrs | | |
+| Food Create & Edit CT | H | 2hrs | | |
+| Food & Details CT | H | 2hrs | | |
+| Comments CT | H | 2hrs | | |
+| React App Cleanup | M | 2hrs | | |
+| Deploying to Heroku | H | 2hrs | | |
+| Netlify Deploy | H | 2hrs | | |
+| Clickalbe Model | H | 2hrs | | |
+| CSS Layout | H | 3hrs | | |
+| CSS Screens | H | 3hrs | | |
+| CSS Components | H | 3hrs | | |
+| Media-Query Screens | H | 2hrs | | |
+| Media-Query Layout | H | 2hrs | | |
+| Clickalbe Walk-Through | H | 2hrs | | |
+| Presentation Prep | H | 2hrs | | |
+| Total | | 58hrs | | |
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -129,23 +171,26 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+![p4 (3)](https://user-images.githubusercontent.com/85095722/130718753-96fbbc98-b91d-4879-9a08-d4f7313069df.png)
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
 <br>
 
 ***
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Admin role
+- Dark Mode
+- Subcommenting
+- Map Locations
+- User updating
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+Can't be proud of anything I haven't finished yet.
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+Always have a problem coming up with names...
