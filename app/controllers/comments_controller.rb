@@ -1,22 +1,24 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
-  # GET /comments
+  # GET /locations/1/foods/1/comments
   def index
     @comments = Comment.all
 
     render json: @comments
   end
 
-  # GET /comments/1
+  # GET /locations/1/foods/1/comments/1
   def show
     render json: @comment
   end
 
-  # POST /comments
+  # POST /locations/1/foods/1/comments
   def create
     @comment = Comment.new(comment_params)
     @comment.user = @current_user
+    @comment.food = Food.find(params[:food_id])
     if @comment.save
       render json: @comment, status: :created
     else
@@ -24,7 +26,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /comments/1
+  # PATCH/PUT /locations/1/foods/1/comments/1
   def update
     if @comment.update(comment_params)
       render json: @comment
@@ -33,7 +35,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
+  # DELETE /locations/1/foods/1/comments/1
   def destroy
     @comment.destroy
   end
@@ -42,10 +44,11 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+      @food = Food.find(params[:food_id])
     end
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:message, :user_id, :food_id, :comment_id)
+      params.require(:comment).permit(:message)
     end
 end
