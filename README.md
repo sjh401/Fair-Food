@@ -58,6 +58,7 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 | JWT | Token Based Authentication |
 | Bcrypt | Password Security |
 | Faker | Seeding Database |
+| React Star Ratings | Star Rating for Food |
 
 <br>
 
@@ -138,7 +139,7 @@ src
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Repo/Branch Setup & Gem Installs | H | 2hrs | | |
+| Repo/Branch Setup & Gem Installs | H | 2hrs | 0.5hrs | |
 | Schema & Seed File Creation & Testing (CT) | H | 2hrs | | |
 | Models & Routes CT | H | 2hrs | | |
 | Controllers CT | H | 3hrs | | |
