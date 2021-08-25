@@ -187,6 +187,7 @@ src
 - Subcommenting
 - Map Locations
 - User updating
+- Mailer
 
 ***
 
