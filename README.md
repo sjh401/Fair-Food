@@ -1,4 +1,4 @@
-# Fair Foods
+# The Deep Fried Twinkie
 
 
 - [Overview](#overview)
@@ -20,14 +20,14 @@
 
 ## Overview
 
-**Fair Foods** is a forum for sharing food at event locations; state fairs, ballparks, amusement parks, etc. Once registered and logged in, users will be able to create and share food items, ranking them and giving descriptions about the food. Users will also be able to comment on each others food posts to share feedback and praise.
+**The Deep Fried Twinkie** is a forum for sharing food at event locations; state fairs, ballparks, amusement parks, etc. Once registered and logged in, users will be able to create and share food items, ranking them and giving descriptions about the food. Users will also be able to comment on each others food posts to share feedback and praise.
 
 <br>
 
 ## MVP
 
 
-The **Fair Foods** MVP will have a RESTful backend with three mutable tables and one static Locations table, seeded into the database. The front-end will have nine separate screens, eight resting under a Container file where state will be stored. Users will be able to create an account and login while being authenticated throughout the app. If logged in, the user will be able to have CRUD on both the Food table and Comments table, only being able to update and delete their own content. There will be respomsive layouts set up for web, tablet, and mobile views with stying through flexbox and grid displays. The project will follow proper linting practices and be deployed through Surge and Heroku.
+The **The Deep Fried Twinkie** MVP will have a RESTful backend with three mutable tables and one static Locations table, seeded into the database. The front-end will have nine separate screens, eight resting under a Container file where state will be stored. Users will be able to create an account and login while being authenticated throughout the app. If logged in, the user will be able to have CRUD on both the Food table and Comments table, only being able to update and delete their own content. There will be respomsive layouts set up for web, tablet, and mobile views with stying through flexbox and grid displays. The project will follow proper linting practices and be deployed through Surge and Heroku.
 
 <br>
 
