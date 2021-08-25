@@ -69,37 +69,40 @@ The **Fair Food** MVP will have a RESTful backend with three mutable tables and 
 - Desktop Landing
 
 ![p4-wireframce - Window (6)](https://user-images.githubusercontent.com/85095722/130710969-feab2046-f95c-4024-99cb-49701016bb6e.png)
-- Login
+- Desktop Login
 
 ![p4-wireframce - Window (4)](https://user-images.githubusercontent.com/85095722/130710938-3f6f9ff3-d91a-45d5-a800-5b4caeaa85ce.png)
-- Locations
+- Desktop Locations
 
 ![p4-wireframce - Window](https://user-images.githubusercontent.com/85095722/130710883-9d0d9c40-7b40-44f5-a656-dc78d1ec1951.png)
-- Location Details
+- Desktop Location Details
 
 ![p4-wireframce - Window (1)](https://user-images.githubusercontent.com/85095722/130711067-c1510af0-a5a4-4a9c-b533-26df621746a2.png)
-- Food Details & Comments
+- Desktop Food Details & Comments
 
 ![p4-wireframce - Window (5)](https://user-images.githubusercontent.com/85095722/130711271-3d0b6145-f871-45b3-b639-d93d499dda71.png)
-- Food Create
+- Desktop Food Create
 
 ![p4-wireframce - Window (2)](https://user-images.githubusercontent.com/85095722/130711120-9ea648b3-0458-4ead-bfb2-073ff91b8b73.png)
-- About
+- Desktop About
 
 ![p4-wireframce - Window (3)](https://user-images.githubusercontent.com/85095722/130711128-a0e84b40-6a1f-4108-a720-4e7f34ca921b.png)
-- Contact
+- Desktop Contact
 
-![p4-wireframce - Phone X (4)](https://user-images.githubusercontent.com/85095722/130711166-ba32d70b-200d-4b5b-915a-e310287e736f.png)
+![p4-wireframce - Phone X@1 600000023841858x (5)](https://user-images.githubusercontent.com/85095722/130719358-b8baaffa-4e42-4bcc-b650-26db85512d55.png)
 - Mobile Register
 
-![p4-wireframce - Phone X@1 600000023841858x](https://user-images.githubusercontent.com/85095722/130711949-41e0eda6-190b-470a-a711-d57f4425cca7.png)
-- Mobile Edit Food
+![p4-wireframce - Phone X@1 600000023841858x (2)](https://user-images.githubusercontent.com/85095722/130719263-a49497c8-20de-439f-b75a-f94e23af65fe.png)
+- Mobile Food Detail
 
-![p4-wireframce - Phone X (3)](https://user-images.githubusercontent.com/85095722/130711204-ed070224-8276-4ebe-93ed-a960b03e308b.png)
+![p4-wireframce - Phone X@1 600000023841858x (3)](https://user-images.githubusercontent.com/85095722/130719462-d425545e-ade9-4258-8803-e92a085da7f1.png)
+- Mobile Food Edit
+
+![p4-wireframce - Phone X@1 600000023841858x (4)](https://user-images.githubusercontent.com/85095722/130719336-331091fe-18b9-4ecd-96f1-7ce57d769a60.png)
 - Mobile Contact
 
 ![p4-wireframce - Tablet](https://user-images.githubusercontent.com/85095722/130711004-8ccbd336-802e-4359-b34d-2095594f03dc.png)
-- Food Detail Tablet
+- Tablet Food Detail
 
 #### Component Tree
 
