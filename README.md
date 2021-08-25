@@ -6,8 +6,8 @@
   - [Goals](#goals)
   - [Libraries and Dependencies](#libraries-and-dependencies)
   - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
     - [Component Tree](#component-tree)
+    - [Wireframes](#wireframes)
     - [Component Architecture](#component-architecture)
     - [Time Estimates](#time-estimates)
   - [Server (Back End)](#server-back-end)
@@ -63,6 +63,11 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 
 ### Client (Front End)
 
+#### Component Tree
+
+![p4-component-tree (1)](https://user-images.githubusercontent.com/85095722/130712038-7f78eb7e-6734-4e3f-b85c-05bb59e51f19.png)
+
+
 #### Wireframes
 
 ![p4-wireframce - Window (7)](https://user-images.githubusercontent.com/85095722/130714931-bbeeec44-1990-43e1-b49e-a77a975aa746.png)
@@ -80,13 +85,13 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 ![p4-wireframce - Window (1)](https://user-images.githubusercontent.com/85095722/130711067-c1510af0-a5a4-4a9c-b533-26df621746a2.png)
 - Desktop Food Details & Comments
 
-![p4-wireframce - Window (5)](https://user-images.githubusercontent.com/85095722/130711271-3d0b6145-f871-45b3-b639-d93d499dda71.png)
+![p4-wireframce - Window (3)](https://user-images.githubusercontent.com/85095722/130711128-a0e84b40-6a1f-4108-a720-4e7f34ca921b.png)
 - Desktop Food Create
 
 ![p4-wireframce - Window (2)](https://user-images.githubusercontent.com/85095722/130711120-9ea648b3-0458-4ead-bfb2-073ff91b8b73.png)
 - Desktop About
 
-![p4-wireframce - Window (3)](https://user-images.githubusercontent.com/85095722/130711128-a0e84b40-6a1f-4108-a720-4e7f34ca921b.png)
+![p4-wireframce - Window (5)](https://user-images.githubusercontent.com/85095722/130711271-3d0b6145-f871-45b3-b639-d93d499dda71.png)
 - Desktop Contact
 
 ![p4-wireframce - Phone X@1 600000023841858x (5)](https://user-images.githubusercontent.com/85095722/130719358-b8baaffa-4e42-4bcc-b650-26db85512d55.png)
@@ -103,10 +108,6 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 
 ![p4-wireframce - Tablet](https://user-images.githubusercontent.com/85095722/130711004-8ccbd336-802e-4359-b34d-2095594f03dc.png)
 - Tablet Food Detail
-
-#### Component Tree
-
-![p4-component-tree (1)](https://user-images.githubusercontent.com/85095722/130712038-7f78eb7e-6734-4e3f-b85c-05bb59e51f19.png)
 
 
 #### Component Architecture
