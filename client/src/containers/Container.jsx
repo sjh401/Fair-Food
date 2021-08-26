@@ -7,14 +7,16 @@ import FoodDetail from '../screens/food/FoodDetail';
 import FoodEdit from '../screens/food/FoodEdit';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
+import { getAllComments } from '../services/comments';
 
 
-import { getAllFoods, postFood, putFood } from '../services/foods';
+import { deleteFood, getAllFoods, postFood, putFood } from '../services/foods';
 import { getAllLocations } from '../services/locations';
 
 export default function Container() {
     const [ allLocations, setAllLocations ] = useState([]);
     const [ allFoods, setAllFoods ] = useState([]);
+    const [ allComments, setAllComments ] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
@@ -33,6 +35,14 @@ export default function Container() {
         fetchFoods();
     },[])
 
+    useEffect(() => {
+        const fetchComments = async () => {
+            const comments = await getAllComments();
+            setAllComments(comments);
+        }
+        fetchComments();
+    },[])
+
     const createFood = async (location_id, foodData) => {
         const newFood = await postFood(location_id, foodData);
         setAllFoods(prevFoodData => ([
@@ -46,6 +56,11 @@ export default function Container() {
         setAllFoods(prevFoodData => prevFoodData.map(food => {
             return food.id === Number(food_id) ? newFood : food
         }))
+        history.push(`/locations/${location_id}`)
+    }
+    const removeFood = async (location_id, food_id) => {
+        await deleteFood(location_id, food_id);
+        setAllFoods(prevFoodData => prevFoodData.filter(food => food.id !== Number(food_id)))
         history.push(`/locations/${location_id}`)
     }
 
@@ -66,6 +81,7 @@ export default function Container() {
                 <Route path="/locations/:location_id/foods/:food_id">
                     <FoodDetail
                         allFoods={allFoods}
+                        removeFood={removeFood}
                     />
                 </Route>
                 <Route path="/locations/:location_id">

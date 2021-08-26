@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import './Food.css'
 
 export default function FoodDetail(props) {
-    const { allFoods } = props;
-    const { food_id } = useParams();
+    const { allFoods, removeFood } = props;
+    const { location_id, food_id } = useParams();
     const [ food, setFood ] = useState([]);
 
     useEffect(() => {
@@ -26,6 +26,7 @@ export default function FoodDetail(props) {
                         <div>{food?.food_stall}</div>
                         <div>{food?.description}</div>
                         <Link to={`/locations/${food?.location_id}/foods/${food?.id}/edit`} className="locations-container-link">Edit</Link>
+                        <button onClick={() => removeFood(location_id, food_id)}>Delete Food</button>
                     </div>
                 </div>
                 <div className="food-comments">

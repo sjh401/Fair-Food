@@ -36,8 +36,10 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1
+  # DELETE /locations/1/foods/1
   def destroy
+    @location = Location.find(params[:location_id])
+    @food = Food.find(params[:id])
     @food.destroy
   end
 

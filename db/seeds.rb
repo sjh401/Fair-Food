@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Comment.destroy_all
-Food.destroy_all
+# Comment.destroy_all
+# Food.destroy_all
 # Location.destroy_all
 # User.destroy_all
 
@@ -21,8 +21,10 @@ Food.destroy_all
 # # ]
 # @user = User.create(username: 'test', email: 'test@test.test', password: '123456789')
 # puts "#{User.count} users created."
-@currentuser = User.find(5)
-p @currentuser
+
+# @currentuser = User.find(5)
+
+# p @currentuser
 # @location = Location.find(21)
 # p @location
 # Location.create!(name: 'Minnesota State Fair', city: 'St. Paul', img_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Fairchild.JPG/2560px-Fairchild.JPG', description: 'The Minnesota State Fair is the state fair of the U.S. state of Minnesota. Also known by its slogan, "The Great Minnesota Get-Together", it is the largest state fair in the United States by average daily attendance.')
@@ -37,8 +39,12 @@ p @currentuser
 
 # puts "#{Location.count} locations created."
 
-72.times do
-    Food.create!(name: Faker::Food.dish, cuisine: Faker::Restaurant.type, description: Faker::Food.description, food_stall: Faker::Movies::HarryPotter.location, img_url: Faker::Placeholdit.image , rating: rand(1..10), location_id: rand(21..28), user_id: @currentuser.id)
-end
+# 72.times do
+#     Food.create!(name: Faker::Food.dish, cuisine: Faker::Restaurant.type, description: Faker::Food.description, food_stall: Faker::Movies::HarryPotter.location, img_url: Faker::Placeholdit.image , rating: rand(1..10), location_id: rand(21..28), user_id: @currentuser.id)
+# end
 
-puts "#{Food.count} foods created."
+# puts "#{Food.count} foods created."
+
+# 300.times do
+#     Comment.create!(message: Faker::Movies::HarryPotter.spell, user_id: @currentuser.id, food_id: rand(11..81))
+# end

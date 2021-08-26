@@ -13,7 +13,7 @@ export default function FoodCreate(props) {
     const { name, cuisine, description, food_stall, img_url, rating } = formData;
     const { createFood } = props;
     const { location_id } = useParams();
-    console.log(formData)
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevFormData => ({
