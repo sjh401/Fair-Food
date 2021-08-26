@@ -15,7 +15,7 @@ export default function FoodEdit(props) {
     const { allFoods, updateFood } = props;
     const { location_id, food_id } = useParams();
     const [ food, setFood ] = useState([]);
-    console.log(useParams())
+
     useEffect(() => {
         const oneFood = allFoods.find(food => {
             return food.id === Number(food_id)
@@ -38,7 +38,7 @@ export default function FoodEdit(props) {
         if(allFoods.length) {
             prefillFormData();
         }
-    }, [allFoods, food_id])
+    }, [allFoods, food_id, food])
     
     const handleChange = (e) => {
         const { name, value } = e.target;

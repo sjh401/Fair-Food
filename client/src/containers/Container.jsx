@@ -82,6 +82,7 @@ export default function Container() {
                     <FoodDetail
                         allFoods={allFoods}
                         removeFood={removeFood}
+                        allComments={allComments}
                     />
                 </Route>
                 <Route path="/locations/:location_id">

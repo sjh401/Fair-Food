@@ -9,36 +9,36 @@ export const getAllComments = async (location_id, food_id) => {
     }
 }
 
-export const getFood = async (location_id, id) => {
+export const getComment = async (location_id, food_id, id) => {
     try {
-        let res = await api.get(`/locations/${location_id}/foods/${id}`);
+        let res = await api.get(`/locations/${location_id}/foods/${food_id}/comments/${id}`);
         return res.data
     } catch (e) {
         return ({ errors: e })
     }
 }
 
-export const postFood = async (location_id, foodData) => {
+export const postFood = async (location_id, food_id, commentData) => {
     try {
-        let res = await api.post(`/locations/${location_id}/foods`, { food: foodData });
+        let res = await api.post(`/locations/${location_id}/foods/${food_id}/comments`, { comment: commentData });
         return res.data;
     } catch (e) {
         return ({ errors: e })
     }
 }
 
-export const putFood = async (location_id, food_id, foodData) => {
+export const putFood = async (location_id, food_id, id, commentData) => {
     try {
-        let res = await api.put(`/locations/${location_id}/foods/${food_id}`, foodData);
+        let res = await api.put(`/locations/${location_id}/foods/${food_id}/comments/${id}`, { comment: commentData });
         return res.data;
     } catch (e) {
         return ({ errors: e })
     }
 }
 
-export const deleteFood = async (location_id, food_id) => {
+export const deleteFood = async (location_id, food_id, id) => {
     try {
-        let res = await api.delete(`/locations/${location_id}/foods/${food_id}`);
+        let res = await api.delete(`/locations/${location_id}/foods/${food_id}/comments/${id}`);
         return res.data;
     } catch (e) {
         return ({ errors: e })

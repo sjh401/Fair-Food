@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import CommentCard from '../../components/card/CommentCard';
 import './Food.css'
 
 export default function FoodDetail(props) {
-    const { allFoods, removeFood } = props;
+    const { allFoods, removeFood, allComments } = props;
     const { location_id, food_id } = useParams();
     const [ food, setFood ] = useState([]);
+    const [ comments, setComments ] = useState([]);
 
     useEffect(() => {
         const oneFood = allFoods.find(food => {
@@ -13,6 +15,11 @@ export default function FoodDetail(props) {
         });
         setFood(oneFood);
     },[allFoods, food_id])
+
+    useEffect(() => {
+        const foodComments = allComments.filter(comment => comment.food_id === Number(food_id));
+        setComments(foodComments);
+    },[allComments, food_id])
 
     return (
         <>
@@ -30,7 +37,9 @@ export default function FoodDetail(props) {
                     </div>
                 </div>
                 <div className="food-comments">
-                    comments will appear here
+                    <CommentCard
+                        comments={comments}
+                    />
                 </div>
             </div>
         </>
