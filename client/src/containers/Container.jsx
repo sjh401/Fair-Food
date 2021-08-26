@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import About from '../screens/about/About';
+import CommentEdit from '../screens/CommentEdit';
 import Contact from '../screens/contact/Contact';
 import FoodCreate from '../screens/food/FoodCreate';
 import FoodDetail from '../screens/food/FoodDetail';
 import FoodEdit from '../screens/food/FoodEdit';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
-import { deleteComment, getAllComments, postComment } from '../services/comments';
+import { deleteComment, getAllComments, postComment, putComment } from '../services/comments';
 
 
 import { deleteFood, getAllFoods, postFood, putFood } from '../services/foods';
@@ -74,6 +75,14 @@ export default function Container(props) {
         ]))
         history.push(`/locations/${location_id}/foods/${food_id}`)
     }
+    
+    const updateComment = async (location_id, food_id, comment_id, commentData) => {
+        const updated = await putComment(location_id, food_id, comment_id, commentData);
+        setAllComments(prevCommentData => prevCommentData.map(comment => {
+            return comment.id === Number(comment_id) ? updated : comment
+        }))
+        history.push(`/locations/${location_id}/foods/${food_id}`)
+    }
 
     const removeComment = async (location_id, food_id, comment_id) => {
         await deleteComment(location_id, food_id, comment_id)
@@ -84,6 +93,13 @@ export default function Container(props) {
     return (
         <>
             <Switch>
+            <Route path="/locations/:location_id/foods/:food_id/comments/:comment_id">
+                <CommentEdit
+                    updateComment={updateComment}
+                    currentUser={currentUser}
+                    allComments={allComments}
+                />
+            </Route>
                 <Route path="/locations/:location_id/foods/:food_id/edit">
                     <FoodEdit 
                         allFoods={allFoods}

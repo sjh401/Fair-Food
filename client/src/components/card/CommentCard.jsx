@@ -26,8 +26,8 @@ export default function CommentCard(props) {
                         </div>
                         {(currentUser?.id === comment.user_id) &&
                         <div>
-                            <Link to={`/locations/${food?.location_id}/foods/${food?.id}/comments/${comment.id}/edit`}>Edit</Link>
-                            <button onClick={() => removeComment(food?.location_id, food?.id, comment.id)}>Delete</button>
+                            <Link to={`/locations/${food.location_id}/foods/${food.id}/comments/${comment.id}`}>Edit</Link>
+                            <button onClick={() => removeComment(food.location_id, food.id, comment.id)}>Delete</button>
                         </div>
                         }
                     </div>

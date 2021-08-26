@@ -82,6 +82,7 @@ export default function FoodDetail(props) {
                         currentUser={currentUser}
                         allUsers={allUsers}
                         removeComment={removeComment}
+                        food={food}
                     />
                 </div>
             </div>
