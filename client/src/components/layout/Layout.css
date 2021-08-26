@@ -14,6 +14,9 @@ header {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     height: 10vh;
     width: 100vw;
     background-color: #1d7dc2;
@@ -23,6 +26,10 @@ footer {
 .project-title {
     color: #f8f7ff;
     margin: 0;
+}
+
+.footer-div {
+    padding: 10px;
 }
 /* color palette
 saffron - #e4b612

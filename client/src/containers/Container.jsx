@@ -6,6 +6,7 @@ import Contact from '../screens/contact/Contact';
 import FoodCreate from '../screens/food/FoodCreate';
 import FoodDetail from '../screens/food/FoodDetail';
 import FoodEdit from '../screens/food/FoodEdit';
+import Home from '../screens/Home';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
 import { deleteComment, getAllComments, postComment, putComment } from '../services/comments';
@@ -140,6 +141,11 @@ export default function Container(props) {
                 <Route path="/locations">
                     <Locations 
                         locations={allLocations}
+                    />
+                </Route>
+                <Route to="/">
+                    <Home 
+                        allFoods={allFoods}
                     />
                 </Route>
             </Switch>

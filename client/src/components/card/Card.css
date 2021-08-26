@@ -16,14 +16,16 @@
 
 .food-card-container {
     margin: 5px 20px;
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
+    background-color: #f8f7ff;
+    border-radius: 50%;
 
 }
 
 .food-card-image {
-    height: 75px;
-    width: 75px;
+    height: 150px;
+    width: 150px;
 }
 
 .food-card-description {
