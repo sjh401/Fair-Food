@@ -18,7 +18,7 @@ export const getComment = async (location_id, food_id, id) => {
     }
 }
 
-export const postFood = async (location_id, food_id, commentData) => {
+export const postComment = async (location_id, food_id, commentData) => {
     try {
         let res = await api.post(`/locations/${location_id}/foods/${food_id}/comments`, { comment: commentData });
         return res.data;
@@ -27,7 +27,7 @@ export const postFood = async (location_id, food_id, commentData) => {
     }
 }
 
-export const putFood = async (location_id, food_id, id, commentData) => {
+export const putComment = async (location_id, food_id, id, commentData) => {
     try {
         let res = await api.put(`/locations/${location_id}/foods/${food_id}/comments/${id}`, { comment: commentData });
         return res.data;
@@ -36,7 +36,7 @@ export const putFood = async (location_id, food_id, id, commentData) => {
     }
 }
 
-export const deleteFood = async (location_id, food_id, id) => {
+export const deleteComment = async (location_id, food_id, id) => {
     try {
         let res = await api.delete(`/locations/${location_id}/foods/${food_id}/comments/${id}`);
         return res.data;

@@ -49,12 +49,17 @@ export default function FoodCreate(props) {
                 </label>
                 <label>
                     Cuisine
-                    <input 
-                        type="text"
-                        name="cuisine"
-                        value={cuisine}
-                        onChange={handleChange}
-                    />
+                    <select 
+                    name="cuisine"
+                    value={cuisine}
+                    onChange={handleChange}>
+                    <option id="Appitizer">Appitizer</option>
+                    <option id="Entree">Entree</option>
+                    <option id="Dessert">Dessert</option>
+                    <option id="Snack">Snack</option>
+                    <option id="Beverage">Beverage</option>
+                    <option id="Alcohol">Alcohol</option>
+                </select>
                 </label>
                 <label>
                     Where to find it?

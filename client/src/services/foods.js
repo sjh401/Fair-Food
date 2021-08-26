@@ -29,7 +29,7 @@ export const postFood = async (location_id, foodData) => {
 
 export const putFood = async (location_id, food_id, foodData) => {
     try {
-        let res = await api.put(`/locations/${location_id}/foods/${food_id}`, foodData);
+        let res = await api.put(`/locations/${location_id}/foods/${food_id}`, { food: foodData });
         return res.data;
     } catch (e) {
         return ({ errors: e })

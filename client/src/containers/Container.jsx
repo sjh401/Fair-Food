@@ -7,17 +7,19 @@ import FoodDetail from '../screens/food/FoodDetail';
 import FoodEdit from '../screens/food/FoodEdit';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
-import { getAllComments } from '../services/comments';
+import { deleteComment, getAllComments, postComment } from '../services/comments';
 
 
 import { deleteFood, getAllFoods, postFood, putFood } from '../services/foods';
 import { getAllLocations } from '../services/locations';
 
-export default function Container() {
+export default function Container(props) {
     const [ allLocations, setAllLocations ] = useState([]);
     const [ allFoods, setAllFoods ] = useState([]);
     const [ allComments, setAllComments ] = useState([]);
+    const { currentUser, allUsers } = props;
     const history = useHistory();
+    // const { currentUser } = props;
 
     useEffect(() => {
         const fetchLocations = async () => {
@@ -64,6 +66,21 @@ export default function Container() {
         history.push(`/locations/${location_id}`)
     }
 
+    const createComment = async (location_id, food_id, commentData) => {
+        const newComment = await postComment(location_id, food_id, commentData);
+        setAllComments(prevCommentData => ([
+            ...prevCommentData,
+            newComment
+        ]))
+        history.push(`/locations/${location_id}/foods/${food_id}`)
+    }
+
+    const removeComment = async (location_id, food_id, comment_id) => {
+        await deleteComment(location_id, food_id, comment_id)
+        setAllComments(prevCommentData => prevCommentData.filter(comment => comment.id !== Number(comment_id)))
+        history.go(`/locations/${location_id}/foods/${food_id}`)
+    }
+
     return (
         <>
             <Switch>
@@ -71,11 +88,13 @@ export default function Container() {
                     <FoodEdit 
                         allFoods={allFoods}
                         updateFood={updateFood}
+                        currentUser={currentUser}
                     />
                 </Route>
                 <Route path="/locations/:location_id/foods/new">
                     <FoodCreate
                         createFood={createFood}
+                        currentUser={currentUser}
                     />
                 </Route>
                 <Route path="/locations/:location_id/foods/:food_id">
@@ -83,12 +102,17 @@ export default function Container() {
                         allFoods={allFoods}
                         removeFood={removeFood}
                         allComments={allComments}
+                        currentUser={currentUser}
+                        allUsers={allUsers}
+                        createComment={createComment}
+                        removeComment={removeComment}
                     />
                 </Route>
                 <Route path="/locations/:location_id">
                     <LocationDetail
                         allLocations={allLocations}
                         allFoods={allFoods}
+                        currentUser={currentUser}
                     />
                 </Route>
                 <Route path="/about">

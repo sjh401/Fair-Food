@@ -39,7 +39,7 @@ export default function FoodEdit(props) {
             prefillFormData();
         }
     }, [allFoods, food_id, food])
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevFormData => ({
@@ -75,12 +75,17 @@ export default function FoodEdit(props) {
             </label>
             <label>
                 Cuisine
-                <input 
-                    type="text"
+                <select 
                     name="cuisine"
                     value={cuisine}
-                    onChange={handleChange}
-                />
+                    onChange={handleChange}>
+                    <option id="Appitizer">Appitizer</option>
+                    <option id="Entree">Entree</option>
+                    <option id="Dessert">Dessert</option>
+                    <option id="Snack">Snack</option>
+                    <option id="Beverage">Beverage</option>
+                    <option id="Alcohol">Alcohol</option>
+                </select>
             </label>
             <label>
                 Where to find it?

@@ -3,9 +3,10 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.select('username, id')
 
-    render json: @users
+    # @users = @users.each { |user| user.attributes.except("password_digest, email") }
+    render json:  @users
   end
 
   # # GET /users/1
