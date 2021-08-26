@@ -6,7 +6,7 @@
 .locations-containter {
     display: flex;
     flex-flow: row wrap;
-    background-color: #c30c24;
+    
 }
 
 .location-detail-food-cards {
