@@ -36,7 +36,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  # DELETE /foods/1
+  # DELETE /locations/1/foods/1
   def destroy
     @food.destroy
   end

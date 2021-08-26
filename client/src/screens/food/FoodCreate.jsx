@@ -13,7 +13,7 @@ export default function FoodCreate(props) {
     const { name, cuisine, description, food_stall, img_url, rating } = formData;
     const { createFood } = props;
     const { location_id } = useParams();
-    console.log(formData)
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevFormData => ({
@@ -49,12 +49,17 @@ export default function FoodCreate(props) {
                 </label>
                 <label>
                     Cuisine
-                    <input 
-                        type="text"
-                        name="cuisine"
-                        value={cuisine}
-                        onChange={handleChange}
-                    />
+                    <select 
+                    name="cuisine"
+                    value={cuisine}
+                    onChange={handleChange}>
+                    <option id="Appitizer">Appitizer</option>
+                    <option id="Entree">Entree</option>
+                    <option id="Dessert">Dessert</option>
+                    <option id="Snack">Snack</option>
+                    <option id="Beverage">Beverage</option>
+                    <option id="Alcohol">Alcohol</option>
+                </select>
                 </label>
                 <label>
                     Where to find it?

@@ -5,11 +5,20 @@ import Layout from './components/layout/Layout';
 import Container from './containers/Container';
 import Login from './screens/user/Login';
 import Register from './screens/user/Register';
-import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
+import { getUsers, loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 
 function App() {
   const [ currentUser, setCurrentUser ] = useState(null);
+  const [ allUsers, setAllUsers ] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const users = await getUsers();
+      setAllUsers(users);
+    }
+    fetchUsers();
+  },[])
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -56,7 +65,10 @@ function App() {
               />
             </Route>
             <Route path="/">
-              <Container />
+              <Container 
+                currentUser={currentUser}
+                allUsers={allUsers}
+              />
             </Route>
           </Switch>
         </Layout>

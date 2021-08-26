@@ -4,7 +4,7 @@ import FoodCard from '../../components/card/FoodCard';
 import './Location.css'
 
 export default function LocationDetail(props) {
-    const { allLocations, allFoods } = props;
+    const { allLocations, allFoods, currentUser } = props;
     const { location_id } = useParams();
     const [ location, setLocation ] = useState([]);
     const [ foods, setFoods ] = useState([]);
@@ -26,22 +26,23 @@ export default function LocationDetail(props) {
             <h1>{location?.name}</h1>
             <div className="locationd-detail-foods">
                 {foods.map(food => (
-                        <React.Fragment key={food.id}>
-                            <Link to={`/locations/${location_id}/foods/${food.id}`} className="locations-container-link">
-                                <FoodCard
-                                    name={food.name}
-                                    cuisine={food.cuisine}
-                                    description={food.description}
-                                    img_url={food.img_url}
-                                />
-                            </Link>
-                        </React.Fragment>
-                    ))}
+                    <React.Fragment key={food.id}>
+                        <Link to={`/locations/${location_id}/foods/${food.id}`} className="locations-container-link">
+                            <FoodCard
+                                name={food.name}
+                                cuisine={food.cuisine}
+                                description={food.description}
+                                img_url={food.img_url}
+                            />
+                        </Link>
+                    </React.Fragment>
+                ))}
             </div>
-            <div>
-                <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">Create New Food</Link>
-            </div>
-
+            {currentUser &&
+                <div>
+                    <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">Create New Food</Link>
+                </div>
+            }
         </div>
     )
 }
