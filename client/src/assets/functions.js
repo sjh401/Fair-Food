@@ -4,11 +4,7 @@ export const sortArray = (array) => {
 }
 
 export const getTenIndecies = (array) => {
-    const limited = array.filter((food, index) => {
-        if(index < 10) {
-            return food
-        }
-    })
+    const limited = array.slice(0,10)
     return limited
 }
 

@@ -3,10 +3,25 @@
     text-decoration: none;
 }
 
+.locations {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .locations-containter {
     display: flex;
     flex-flow: row wrap;
-    
+    justify-content: center;
+    align-items: center;
+    background-color: #c30c24;
+    height: 70vh;
+    width: 90vw;
+    border-radius: 20px;
+    overflow: auto;
 }
 
 .location-detail-food-cards {
@@ -19,7 +34,7 @@
     border-radius: 20px;
     margin: 2.5vh 2.5vw;
     padding: 2.5vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .location-detail-grid {
@@ -36,6 +51,16 @@
 
 .location-detail-description {
     grid-area: 2/3/3/4;
-    height: 100%;
+}
+.location-detail-description-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #c30c24;
+    height: 55vh;
+    border-radius: 20px;
+    margin: 2.5vh 2.5vw;
+    padding: 2.5vh;
+    overflow-y: scroll;
 }
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
-import { filterFoods } from '../../assets/functions';
 import FoodCard from '../../components/card/FoodCard';
 import './Location.css'
 
@@ -31,11 +30,9 @@ export default function LocationDetail(props) {
             setFilterFoods(foods)
         }
     },[filter, foods])
-    console.log(filter)
-    console.log(foods)
 
     const handleChange = (e) => {
-        const { cuisine, value } = e.target;
+        const { value } = e.target;
         setFilter( {cuisine: value} )
     }
 
@@ -84,7 +81,7 @@ export default function LocationDetail(props) {
                         <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">Create New Food</Link>
                     </div>
                 }
-                <div>
+                <div className="location-detail-description-card">
                     {location?.description}
                 </div>
             </div>

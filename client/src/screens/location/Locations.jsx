@@ -7,7 +7,8 @@ export default function Locations(props) {
     const { locations } = props;
 
     return (
-            <div className="locations-containter">
+            <div className="locations">
+                <div  className="locations-containter">
                 {locations.map(location => (
                         <React.Fragment key={location.id}>
                             <Link to={`/locations/${location.id}`} className="locations-container-link">
@@ -20,6 +21,7 @@ export default function Locations(props) {
                             </Link>
                         </React.Fragment>
                     ))}
+                </div>
             </div>
     )
 }

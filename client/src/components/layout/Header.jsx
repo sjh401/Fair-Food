@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import NavHamburger from '../card/NavHamburger';
 import './Layout.css'
 
 export default function Header(props) {
@@ -6,17 +6,12 @@ export default function Header(props) {
 
     return (
         <header>
-            <nav>
-                <h1 className="project-title">Destination Hot Dog</h1>
-                {currentUser ? (
-                <div>
-                    <div>{currentUser.username}</div>
-                    <button onClick={handleLogout}>Logout</button>
-                </div>
-            ) : <Link to="/login">Login/Register</Link> }
-                <Link to="/">Home</Link>
-                <Link to="/locations">Locations</Link>
-            </nav>
+            <div></div>
+            <h1 className="project-title">Destination Hot Dog</h1>
+            <NavHamburger 
+                handleLogout={handleLogout}
+                currentUser={currentUser}
+            />
         </header>
     )
 }

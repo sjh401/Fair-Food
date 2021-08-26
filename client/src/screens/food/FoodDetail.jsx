@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import CommentCard from '../../components/card/CommentCard';
+
+import StarRatings from 'react-star-ratings';
 import './Food.css'
 
 export default function FoodDetail(props) {
@@ -39,6 +41,12 @@ export default function FoodDetail(props) {
             [name]: value
         }))
     }
+    // const halfTheRating = () => {
+    //     if(food.rating){
+    //         return (food.rating)/2
+    //     }
+    // }
+
 
     return (
         <>
@@ -47,8 +55,14 @@ export default function FoodDetail(props) {
                     <h1>{food?.name}</h1>
                     <div>
                         <img src={food?.img_url} alt={food?.name} className="food-detail-image"/>
-                        <div>{food?.cuisine}</div>
-                        <div>{food?.rating}</div>
+                        <div>{food?.cuisine} {food?.rating}</div>
+                        <StarRatings 
+                            rating={food?.rating}
+                            starDimension="25px"
+                            starRatedColor="#c30c24"
+                            starEmptyColor="#f8f7ff"
+                            starHoverColor="#1d7dc2"
+                        />
                         <div>{food?.food_stall}</div>
                         <div>{food?.description}</div>
                         {(currentUser?.id === food?.user_id) &&
