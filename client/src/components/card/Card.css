@@ -1,0 +1,31 @@
+.location-card-container {
+    margin: 5px 20px;
+    height: 150px;
+    width: 150px;
+
+}
+
+.location-card-image {
+    height: 75px;
+    width: 75px;
+}
+
+.location-card-description {
+    display: none;
+}
+
+.food-card-container {
+    margin: 5px 20px;
+    height: 150px;
+    width: 150px;
+
+}
+
+.food-card-image {
+    height: 75px;
+    width: 75px;
+}
+
+.food-card-description {
+    display: none;
+}

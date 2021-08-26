@@ -1,0 +1,9 @@
+.locations-container-link {
+    color: #333432;
+    text-decoration: none;
+}
+
+.locations-containter {
+    display: flex;
+    flex-flow: row wrap;
+}
