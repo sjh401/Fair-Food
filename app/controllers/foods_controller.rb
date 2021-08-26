@@ -16,9 +16,10 @@ class FoodsController < ApplicationController
 
   # POST /locations/1/foods
   def create
+    @location = Location.find(params[:location_id])
     @food = Food.new(food_params)
     @food.user = @current_user
-    @food.location = Location.find(params[:location_id])
+    @food.location = @location
     if @food.save
       render json: @food, status: :created
     else
@@ -44,6 +45,7 @@ class FoodsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_food
       @food = Food.find(params[:id])
+      @location = Location.find(params[:location_id])
     end
 
     # Only allow a list of trusted parameters through.

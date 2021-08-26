@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import About from '../screens/about/About';
 import Contact from '../screens/contact/Contact';
 import FoodCreate from '../screens/food/FoodCreate';
@@ -9,12 +9,13 @@ import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
 
 
-import { getAllFoods } from '../services/foods';
+import { getAllFoods, postFood, putFood } from '../services/foods';
 import { getAllLocations } from '../services/locations';
 
 export default function Container() {
     const [ allLocations, setAllLocations ] = useState([]);
     const [ allFoods, setAllFoods ] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         const fetchLocations = async () => {
@@ -32,21 +33,39 @@ export default function Container() {
         fetchFoods();
     },[])
 
+    const createFood = async (location_id, foodData) => {
+        const newFood = await postFood(location_id, foodData);
+        setAllFoods(prevFoodData => ([
+            ...prevFoodData,
+            newFood
+        ]))
+        history.push(`/locations/${location_id}`)
+    }
+    const updateFood = async (location_id, food_id, foodData) => {
+        const newFood = await putFood(location_id, food_id, foodData);
+        setAllFoods(prevFoodData => prevFoodData.map(food => {
+            return food.id === Number(food_id) ? newFood : food
+        }))
+        history.push(`/locations/${location_id}`)
+    }
+
     return (
         <>
             <Switch>
                 <Route path="/locations/:location_id/foods/:food_id/edit">
                     <FoodEdit 
                         allFoods={allFoods}
+                        updateFood={updateFood}
+                    />
+                </Route>
+                <Route path="/locations/:location_id/foods/new">
+                    <FoodCreate
+                        createFood={createFood}
                     />
                 </Route>
                 <Route path="/locations/:location_id/foods/:food_id">
                     <FoodDetail
                         allFoods={allFoods}
-                    />
-                </Route>
-                <Route path="/locations/:location_id/foods">
-                    <FoodCreate
                     />
                 </Route>
                 <Route path="/locations/:location_id">

@@ -38,6 +38,9 @@ export default function LocationDetail(props) {
                         </React.Fragment>
                     ))}
             </div>
+            <div>
+                <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">Create New Food</Link>
+            </div>
 
         </div>
     )
