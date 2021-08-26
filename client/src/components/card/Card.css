@@ -15,15 +15,19 @@
 }
 
 .food-card-container {
-    margin: 5px 20px;
-    height: 150px;
-    width: 150px;
-
+    margin: 10px 25px;
+    height: 200px;
+    width: 200px;
+    background-color: #f8f7ff;
+    border-radius: 10%;
+    
 }
 
 .food-card-image {
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
 }
 
 .food-card-description {

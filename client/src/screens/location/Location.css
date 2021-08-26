@@ -6,4 +6,36 @@
 .locations-containter {
     display: flex;
     flex-flow: row wrap;
+    
 }
+
+.location-detail-food-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: #c30c24;
+    height: 55vh;
+    width: 55vw;
+    border-radius: 20px;
+    margin: 2.5vh 2.5vw;
+    padding: 2.5vh;
+    overflow: scroll;
+}
+
+.location-detail-grid {
+    display: grid;
+    grid: 10vh 30vh 40vh/ 1fr 1fr 1fr;
+}
+.location-detail-header {
+    grid-area: 1/1/2/4;
+}
+
+.location-detail-foods {
+    grid-area: 2/1/3/3;
+}
+
+.location-detail-description {
+    grid-area: 2/3/3/4;
+    height: 100%;
+}
+
