@@ -68,16 +68,15 @@
 @media only screen and (max-width: 850px) {
     .food-detail-grid {
         display: grid;
-        grid: 16vh 16vh 16vh 16vh 16vh/ 1fr 1fr 1fr;
+        grid: 16vh 16vh 16vh 8vh 8vh 16vh/ 1fr 1fr 1fr;
+        justify-items: center;
     }
     .food-details {
         grid-area: 1/1/4/4;
         margin: 10px;
     }
     .food-detail-comments {
-        grid-area: 5/1/6/4;
-        width: 500px;
-        display: flex;
-        justify-content: center;
+        grid-area: 5/1/7/4;
+        width: 300px;
     }
 }

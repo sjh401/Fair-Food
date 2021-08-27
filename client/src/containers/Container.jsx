@@ -60,7 +60,7 @@ export default function Container(props) {
         setAllFoods(prevFoodData => prevFoodData.map(food => {
             return food.id === Number(food_id) ? newFood : food
         }))
-        history.push(`/locations/${location_id}`)
+        history.push(`/locations/${location_id}/foods/${food_id}`)
     }
     const removeFood = async (location_id, food_id) => {
         await deleteFood(location_id, food_id);

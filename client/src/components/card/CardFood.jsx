@@ -1,7 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router';
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
+import { cardFoodCSS } from '../../assets/material';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -11,29 +9,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import StarRatings from 'react-star-ratings';
 
-const useStyles = makeStyles({
-    root: {
-        width: 400,
-        borderRadius: 40,
-        backgroundColor: "#1d7dc2",
-        boxShadow: '0px 2px 8px #333432',
-        
-    },
-    media: {
-        height: 200,
-    },
-    button: {
-        color: '#f8f7ff'
-    },
-    link: {
-        textDecoration: 'none'
-    }
-});
-
 export default function CardFood(props) {
-    const { locaiton_id, food_id } = useParams();
-    const { name, cuisine, description, img_url, rating, removeFood } = props;
-    const classes = useStyles();
+    const { name, cuisine, description, img_url, rating, removeFood, location_id, food_id } = props;
+    const classes = cardFoodCSS();
 
 
     return (
@@ -45,7 +23,7 @@ export default function CardFood(props) {
                 title={name}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h5" component="div"  className={classes.text}>
                 {name}
                 </Typography>
                 <Typography variant="body2" component="div">
@@ -57,21 +35,21 @@ export default function CardFood(props) {
                     starHoverColor="#1d7dc2"
                 />
                 </Typography>
-                <Typography variant="body2" component="div">
+                <Typography variant="body2" component="div" className={classes.text}>
                 {cuisine}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="div">
+                <Typography variant="body2" component="div" className={classes.text}>
                 {description}
                 </Typography>
             </CardContent>
             </CardActionArea>
             <CardActions>
-                <Link to={`/locations/${locaiton_id}/foods/${food_id}/edit`} className="card-food-link" className={classes.link}>
+                <Link to={`/locations/${location_id}/foods/${food_id}/edit`} className={classes.link}>
                     <Button size="small" color="primary" className={classes.button}>
                         Edit
                     </Button>
                 </Link>
-                    <Button size="small" color="primary" onClick={() => removeFood(locaiton_id,food_id)} className={classes.button}>
+                    <Button size="small" color="primary" onClick={() => removeFood(location_id,food_id)} className={classes.button}>
                         Delete
                     </Button>
             </CardActions>

@@ -40,7 +40,7 @@ export default function FoodDetail(props) {
     const [ formData, setFormData ] = useState({
         message: ''
     });
-
+    
     useEffect(() => {
         const oneFood = allFoods.find(food => {
             return food.id === Number(food_id)
@@ -72,7 +72,8 @@ export default function FoodDetail(props) {
                         img_url={food?.img_url}
                         rating={(food?.rating) ? food.rating/2: 1}
                         removeFood={removeFood}
-                        location_id={food?.location_id}
+                        location_id={location_id}
+                        food_id={food_id}
                     />
                 </div>
                 <div className="food-detail-comments">
@@ -101,6 +102,8 @@ export default function FoodDetail(props) {
                         allUsers={allUsers}
                         removeComment={removeComment}
                         food={food}
+                        location_id={location_id}
+                        food_id={food_id}
                     />
                 </div>
             </div>

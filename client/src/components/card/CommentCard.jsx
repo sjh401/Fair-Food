@@ -1,35 +1,18 @@
 import { Link } from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-        backgroundColor: '#1d7dc2',
-        color: '#f8f7ff',
-        width: 50,
-        height: 20,
-        '&:hover': {
-            backgroundColor: '#f8f7ff',
-            color: '#1d7dc2'
-        },
-    },
-}));
+import Button from '@material-ui/core/Button';
+import { commentCardCSS } from '../../assets/material';
 
 export default function CommentCard(props) {
-    const { comments, currentUser, food, allUsers, removeComment } = props;
+    const { comments, currentUser, food, allUsers, removeComment, location_id, food_id } = props;
 
-    const classes = useStyles();
+    const classes = commentCardCSS();
 
     const getUsername = (comment) => {
         const commentUser = allUsers?.find(user => Number(user.id) === Number(comment.user_id))
         return commentUser.username
     }
-
-    // const toggleEdit = () => {
-    //     const 
-    // }
-
     return (
         <div className="comment-card-container">
             {comments?.map(comment => (
@@ -40,7 +23,7 @@ export default function CommentCard(props) {
                         </div>
                         {(currentUser?.id === comment.user_id) &&
                         <div className="comment-card-container-ud">
-                            <Link to={`/locations/${food.location_id}/foods/${food.id}/comments/${comment.id}`} className="card-comment-link">
+                            <Link to={`/locations/${location_id}/foods/${food_id}/comments/${comment.id}`} className="card-comment-link">
                                 <Button 
                                     variant="contained" 
                                     color="primary" 

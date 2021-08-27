@@ -52,7 +52,7 @@ export default function NavHamburger(props) {
         }
     }
     filterForUser()
-},[currentUser, handleLogout])
+},[currentUser, handleLogout, classes.button])
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
