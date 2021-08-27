@@ -4,6 +4,7 @@ import CommentCard from '../../components/card/CommentCard';
 
 import StarRatings from 'react-star-ratings';
 import './Food.css'
+import CardFood from '../../components/card/CardFood';
 
 export default function FoodDetail(props) {
     const { 
@@ -52,26 +53,13 @@ export default function FoodDetail(props) {
         <>
             <div className="food-detail-grid">
                 <div className="food-details">
-                    <h1>{food?.name}</h1>
-                    <div>
-                        <img src={food?.img_url} alt={food?.name} className="food-detail-image"/>
-                        <div>{food?.cuisine} {food?.rating}</div>
-                        <StarRatings 
-                            rating={food?.rating}
-                            starDimension="25px"
-                            starRatedColor="#c30c24"
-                            starEmptyColor="#f8f7ff"
-                            starHoverColor="#1d7dc2"
-                        />
-                        <div>{food?.food_stall}</div>
-                        <div>{food?.description}</div>
-                        {(currentUser?.id === food?.user_id) &&
-                            <React.Fragment>
-                                <Link to={`/locations/${food?.location_id}/foods/${food?.id}/edit`} className="locations-container-link">Edit</Link>
-                                <button onClick={() => removeFood(location_id, food_id)}>Delete Food</button>
-                            </React.Fragment>
-                        }
-                    </div>
+                    <CardFood 
+                        name={food?.name}
+                        cuisine={food?.cuisine}
+                        description={food?.description}
+                        img_url={food?.img_url}
+                        rating={(food?.rating) ? food.rating/2: 1}
+                    />
                 </div>
                 <div className="food-detail-comments">
                     <div className="food-detail-create-comment">

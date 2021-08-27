@@ -1,7 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
+
+import { createTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+
 import FoodCard from '../../components/card/FoodCard';
 import './Location.css'
+
+const ColorButton = withStyles((theme) => ({
+    root: {
+      backgroundColor: '#1d7dc2',
+      '&:hover': {
+        backgroundColor: '#1d7dc2',
+      },
+    },
+  }))(Button);
+const useStyles = makeStyles((theme) => ({
+    margin: {
+      margin: theme.spacing(1),
+    },
+  }));
 
 export default function LocationDetail(props) {
     const { allLocations, allFoods, currentUser } = props;
@@ -10,6 +29,8 @@ export default function LocationDetail(props) {
     const [ foods, setFoods ] = useState([]);
     const [ filterFoods, setFilterFoods ] = useState([]);
     const [ filter, setFilter ] = useState({cuisine: "All"})
+
+    const classes = ColorButton;
 
     useEffect(() => {
         const oneLocation = allLocations.find(location => {
@@ -46,19 +67,23 @@ export default function LocationDetail(props) {
             </div>
             <div className="location-detail-foods">
                 <form>
-                    <select 
-                        name="cuisine"
-                        value={filter.cuisine}
-                        onChange={handleChange}
-                        >
-                        <option value="All">Filter Foods</option>
-                        <option value="Appitizer">Appitizer</option>
-                        <option value="Entree">Entree</option>
-                        <option value="Dessert">Dessert</option>
-                        <option value="Snack">Snack</option>
-                        <option value="Beverage">Beverage</option>
-                        <option value="Alcohol">Alcohol</option>
-                    </select>
+                    <label>
+                        Filter Foods by Cuisine:
+                        <select 
+                            name="cuisine"
+                            value={filter.cuisine}
+                            onChange={handleChange}
+                            className="location-detail-select"
+                            >
+                            <option value="All">All</option>
+                            <option value="Appitizer">Appitizer</option>
+                            <option value="Entree">Entree</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Snack">Snack</option>
+                            <option value="Beverage">Beverage</option>
+                            <option value="Alcohol">Alcohol</option>
+                        </select>
+                    </label>
                 </form>
                 <div className="location-detail-food-cards">
                     {filterFoods.map(food => (
@@ -78,7 +103,11 @@ export default function LocationDetail(props) {
             <div className="location-detail-description">
                 {currentUser &&
                     <div>
-                        <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">Create New Food</Link>
+                        <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">
+                        <ColorButton variant="contained" color="primary" className={classes.margin}>
+                            Create New Food
+                        </ColorButton>
+                        </Link>
                     </div>
                 }
                 <div className="location-detail-description-card">

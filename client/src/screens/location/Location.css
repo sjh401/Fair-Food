@@ -12,6 +12,7 @@
 
 }
 
+
 .locations-containter {
     display: flex;
     flex-flow: row wrap;
@@ -62,5 +63,13 @@
     margin: 2.5vh 2.5vw;
     padding: 2.5vh;
     overflow-y: scroll;
+}
+
+.location-detail-select {
+    height: 36px;
+    width: 150px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: 4px;
 }
 

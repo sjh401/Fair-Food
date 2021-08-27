@@ -12,6 +12,10 @@
 
 .food-details {
     grid-area: 1/1/3/3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
 }
 
 .food-detail-comments {
