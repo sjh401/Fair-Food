@@ -19,14 +19,6 @@ const useStyles = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
-    formControl: {
-        // backgroundColor: '#1d7dc2',
-        // color: '#f8f7ff',
-        // borderRadius: 4,
-        // paddingRight: 4,
-        // paddingLeft: 4,
-    }
-
 }));
 
 export default function LocationDetail(props) {
@@ -111,6 +103,9 @@ export default function LocationDetail(props) {
                                     cuisine={food.cuisine}
                                     description={food.description}
                                     img_url={food.img_url}
+                                    currentUser={currentUser}
+                                    location_id={location_id}
+                                    food_id={food.id}
                                 />
                             </Link>
                         </React.Fragment>

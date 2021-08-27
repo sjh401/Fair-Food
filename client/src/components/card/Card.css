@@ -49,8 +49,11 @@
 
 .comment-card-container {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     color: #f8f7ff;
+    width: 25vw;
+    height: auto;
+    overflow-y: auto;
 }
 .comment-card-container-addons {
     display: flex;
@@ -58,8 +61,27 @@
     justify-content: space-between;
 }
 
-/* .comment-card-container-ud {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-} */
+.comment-card {
+    margin: 20px;
+}
+
+.comment-message {
+    background-color: #f8f7ff;
+    color: #333432;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin: 2px;
+    text-align: left;
+}
+
+.card-comment-link {
+    color: #f8f7ff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+@media only screen and (max-width: 850px) {
+    .comment-card {
+        margin: 5px;
+    }
+}
