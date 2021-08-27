@@ -35,13 +35,11 @@
 #     "https://localfoodwalkingtours.com/wp-content/uploads/2020/07/salt-lake-city-food-tour-flavors.png"
 # ]
 
-@user = User.create(username: 'danny', email: 'you@aint.seen', password: 'B@dboys2!')
-@user = User.create(username: 'nicolas', email: 'angle@police.officer', password: 'Y0urmonkey!')
-@user = User.create(username: 'frank', email: 'wild@west.nut', password: 'Hesnotfromher3!')
-@user = User.create(username: 'theandys', email: 'up@hill.battle', password: 'W@nk3r!!!')
-@user = User.create(username: 'janine', email: 'you@never.switchoff', password: 'N0td@tingbob')
 
-puts "#{User.count} users created."
+@user1 = User.create(username: 'nicolas', email: 'angle@police.officer', password: 'Y0urmonkey!')
+@user2 = User.create(username: 'frank', email: 'wild@west.nut', password: 'Hesnotfromher3!')
+@user3 = User.create(username: 'theandys', email: 'up@hill.battle', password: 'W@nk3r!!!')
+@user4 = User.create(username: 'janine', email: 'you@never.switchoff', password: 'N0td@tingbob')
 
 # Location.create!(name: 'Minnesota State Fair', city: 'St. Paul', img_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Fairchild.JPG/2560px-Fairchild.JPG', description: 'The Minnesota State Fair is the state fair of the U.S. state of Minnesota. Also known by its slogan, "The Great Minnesota Get-Together", it is the largest state fair in the United States by average daily attendance.')
 # Location.create!(name: 'Target Field', city: 'Minneapolis', img_url: 'https://www.gannett-cdn.com/-mm-/760fdfdecace851ee9099a13434838ed133f7d9c/c=0-140-2000-1268/local/-/media/SiouxFalls/mattzimmer/2014/04/30//1398836646000-TargetField.jpg', description: 'Stuff happens here')
