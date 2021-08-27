@@ -12,6 +12,7 @@
 
 }
 
+
 .locations-containter {
     display: flex;
     flex-flow: row wrap;
@@ -64,3 +65,14 @@
     overflow-y: scroll;
 }
 
+.location-detail-select {
+    height: 36px;
+    width: 150px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-radius: 4px;
+}
+
+.created {
+    background-color: #1d7dc2;
+}

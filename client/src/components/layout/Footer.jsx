@@ -1,12 +1,15 @@
 import './Layout.css'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+
 
 export default function Footer() {
     return (
         <footer>
             <div className="footer-div">
-                Stephen Harrity 
-                <a href="https://github.com/sjh401" target="_blank" rel="noreferrer">Github</a>
-                <a href="https://linkedin.com/in/harritystephen" target="_blank" rel="noreferrer">LinkedIn</a>
+                <div>Stephen Harrity</div>
+                <a href="https://github.com/sjh401" target="_blank" rel="noreferrer"><GitHubIcon className="icons"></GitHubIcon></a>
+                <a href="https://linkedin.com/in/harritystephen" target="_blank" rel="noreferrer"><LinkedInIcon className="icons"></LinkedInIcon></a>
             </div>
         </footer>
     )
