@@ -23,10 +23,13 @@
     border-radius: 20px;
     overflow: auto;
     width: 35vw;
+    min-width: 350px;
+    max-width: 675px;
 }
 .home-logo {
     width: 40vw;
-    max-width: 675px;
+    max-width: 600px;
+    min-width: 350px;
     border-radius: 20px;
 }
 
