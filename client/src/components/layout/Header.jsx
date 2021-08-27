@@ -1,4 +1,4 @@
-import NavHamburger from '../card/NavHamburger';
+import NavHamburger from '../layout/NavHamburger';
 import './Layout.css'
 
 export default function Header(props) {

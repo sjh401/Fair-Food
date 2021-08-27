@@ -1,5 +1,3 @@
-
-
 .food-detail-grid {
     display: grid;
     grid: 40vh 40vh/ 1fr 1fr 1fr;
@@ -24,6 +22,7 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
+    align-content: center;
     align-items: center;
     background-color: #c30c24;
     margin: 20px;
@@ -35,17 +34,32 @@
     text-align: left;
     font-size: small;
     color: #f8f7ff;
+
+}
+
+.food-create-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    height: 70vh;
+    width: 30vw;
+    margin: 5vh 35vw;
+    background-color: #c30c24;
+    color: #f8f7ff;
+    border-radius: 20px;
 }
 
 .food-create-form {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    height: 30vh;
-    width: 10vw;
-    margin: 0 45vw;
-    background-color: #c30c24;
-    color: #f8f7ff;
+    align-content: center;
+    height: 550px;
+    width: 20vw;
+    background-color: #f8f7ff;
+    color: #333432;
+    border-radius: 20px;
 }
 
 .card-food-link {

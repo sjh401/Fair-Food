@@ -1,8 +1,21 @@
 import { Link } from 'react-router-dom';
 
-
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { commentCardCSS } from '../../assets/material';
+
+
+export const commentCardCSS = makeStyles((theme) => ({
+    button: {
+        backgroundColor: '#1d7dc2',
+        color: '#f8f7ff',
+        width: 50,
+        height: 20,
+        '&:hover': {
+            backgroundColor: '#f8f7ff',
+            color: '#1d7dc2'
+        },
+    },
+}));
 
 export default function CommentCard(props) {
     const { comments, currentUser, food, allUsers, removeComment, location_id, food_id } = props;

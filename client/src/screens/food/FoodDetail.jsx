@@ -7,18 +7,23 @@ import CardFood from '../../components/card/CardFood';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
     button: {
         backgroundColor: '#1d7dc2',
         color: '#f8f7ff',
-        width: 50,
+        width: 40,
         height: 20,
         '&:hover': {
             backgroundColor: '#f8f7ff',
             color: '#1d7dc2'
         },
     },
+    text: {
+        width: 300,
+        height: 'auto',
+    }
 }));
 
 export default function FoodDetail(props) {
@@ -77,25 +82,28 @@ export default function FoodDetail(props) {
                     />
                 </div>
                 <div className="food-detail-comments">
+                {currentUser && 
                     <div className="food-detail-create-comment">
-                        <div>posting as {currentUser?.username}</div>
                         <form onSubmit={(e) => {
                             e.preventDefault();
                             createComment(location_id, food_id, formData)
                             setFormData({message: ''})
                         }}>
-                            <input
-                                type="text"
-                                name="message"
-                                placeholder="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                            />
-                            <Button variant="contained" color="primary" className={classes.button}>
-                                post
-                            </Button>
+                        <TextField 
+                            required 
+                            className={classes.text}
+                            id="outlined-basic" 
+                            label="Message" 
+                            name="message"
+                            variant="outlined"
+                            value={formData.message}
+                            onChange={handleChange} />
+                        <div>posting as {currentUser?.username}</div>
+                        <Button type="submit" variant="contained" color="primary" className={classes.button}>
+                                Post
+                        </Button>
                         </form>
-                    </div>
+                    </div>}
                     <CommentCard
                         comments={comments}
                         currentUser={currentUser}

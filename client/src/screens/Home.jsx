@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getTenIndecies, sortArray } from '../assets/functions';
 import FoodCard from '../components/card/FoodCard';
-import './food/Food.css'
+import './Home.css'
 
 export default function Home(props) {
     const [ sorted, setSorted ] = useState([])
@@ -20,9 +20,9 @@ export default function Home(props) {
     },[allFoods])
 
     return (
-        <div className="food-detail-grid">
-            <div className="food-details">
-                
+        <div className="home-detail-grid">
+            <div className="home-details">
+                <img src="https://i.imgur.com/dHUKnwu.png" alt="destination hot dog logo" className="home-logo"/>
             </div>
             <div className="home-foods-container">
                 {ten?.map(food => {
@@ -35,8 +35,7 @@ export default function Home(props) {
                             img_url={food.img_url}
                             food_id={food.id}
                         />
-                        )}
-                )}
+                )})}
             </div>
         </div>
     )
