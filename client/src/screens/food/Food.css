@@ -47,3 +47,8 @@
     background-color: #c30c24;
     color: #f8f7ff;
 }
+
+.card-food-link {
+    color: #f8f7ff;
+    text-decoration: none;
+}

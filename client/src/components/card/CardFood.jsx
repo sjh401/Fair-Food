@@ -16,10 +16,18 @@ const useStyles = makeStyles({
         width: 400,
         borderRadius: 40,
         backgroundColor: "#1d7dc2",
+        boxShadow: '0px 2px 8px #333432',
+        
     },
     media: {
         height: 200,
     },
+    button: {
+        color: '#f8f7ff'
+    },
+    link: {
+        textDecoration: 'none'
+    }
 });
 
 export default function CardFood(props) {
@@ -30,7 +38,7 @@ export default function CardFood(props) {
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea >
             <CardMedia
                 className={classes.media}
                 image={img_url}
@@ -58,12 +66,12 @@ export default function CardFood(props) {
             </CardContent>
             </CardActionArea>
             <CardActions>
-                <Link to={`/locations/${locaiton_id}/foods/${food_id}/edit`}>
-                    <Button size="small" color="primary">
+                <Link to={`/locations/${locaiton_id}/foods/${food_id}/edit`} className="card-food-link" className={classes.link}>
+                    <Button size="small" color="primary" className={classes.button}>
                         Edit
                     </Button>
                 </Link>
-                    <Button size="small" color="primary" onClick={() => removeFood(locaiton_id,food_id)}>
+                    <Button size="small" color="primary" onClick={() => removeFood(locaiton_id,food_id)} className={classes.button}>
                         Delete
                     </Button>
             </CardActions>
