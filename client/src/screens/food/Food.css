@@ -22,7 +22,6 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    align-content: center;
     align-items: center;
     background-color: #c30c24;
     margin: 20px;
@@ -55,8 +54,9 @@
     flex-flow: column wrap;
     justify-content: center;
     align-content: center;
-    height: 550px;
+    height: 60vh;
     width: 20vw;
+    max-height: 550px;
     background-color: #f8f7ff;
     color: #333432;
     border-radius: 20px;
