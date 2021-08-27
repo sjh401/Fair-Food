@@ -1,7 +1,7 @@
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles } from '@material-ui/core/styles';
 
-export const cardFoodCSS = makeStyles({
+export const cardFoodCSS = makeStyles((theme) => ({
     root: {
         width: '40vw',
         height: '50vh',
@@ -13,16 +13,15 @@ export const cardFoodCSS = makeStyles({
         height: '30vh',
     },
     button: {
-        color: '#f8f7ff'
+        color: '#f8f7ff',
     },
     link: {
-        textDecoration: 'none'
+        textDecoration: 'none',
     },
     text: {
         color: '#f8f7ff',
     }
-});
-
+}));
 
 export const commentCardCSS = makeStyles((theme) => ({
     button: {
@@ -35,6 +34,25 @@ export const commentCardCSS = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
+}));
+
+export const navHamburgerCSS = makeStyles((theme) => ({
+    button: {
+        backgroundColor: '#1d7dc2',
+        margin: '2px',
+        '&:hover': {
+            backgroundColor: '#f8f7ff',
+            color: '#1d7dc2'
+        },
+    },
+    link: {
+        color: '#1d7dc2',
+        textDecoration: 'none',
+    },
+    linkBar: {
+        color: '#f8f7ff',
+        marginRight: 20,
+    }
 }));
 
 

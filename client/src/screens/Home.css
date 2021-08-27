@@ -1,58 +1,37 @@
-.login-register {
-    margin: 0;
-    color: #1d7dc2;
-}
-
-.login-grid {
+.home-detail-grid {
     display: grid;
     grid: 40vh 40vh/ 1fr 1fr 1fr;
 }
 
-.login-logo-container {
+.home-details {
     grid-area: 1/1/3/3;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 65vh;
     width: auto;
-    margin: 50px;
+    margin: 20px;
 }
 
-.login-container {
+.home-foods-container {
     grid-area: 1/3/3/4;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     background-color: #c30c24;
-    margin: 50px;
+    margin: 20px;
     border-radius: 20px;
     overflow: auto;
-    height: 65vh;
     width: 35vw;
 }
-.login-logo {
-    height: 65vh;
-    border-radius: 20px;
-}
-
-.home-link {
-    text-decoration: none;
-}
-
-.login-form {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    background-color: #f8f7ff;
-    height: 40vh;
-    width: 15vw;
-    padding: 5vh 5vw;
+.home-logo {
+    width: 40vw;
+    max-width: 675px;
     border-radius: 20px;
 }
 
 @media only screen and (max-width: 850px) {
-    .login-grid {
+    .home-detail-grid {
         display: grid;
         grid: 16vh 16vh 16vh 8vh 8vh 16vh/ 1fr 1fr 1fr;
         justify-items: center;
