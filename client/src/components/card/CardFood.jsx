@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,6 +14,8 @@ import StarRatings from 'react-star-ratings';
 const useStyles = makeStyles({
     root: {
         width: 400,
+        borderRadius: 40,
+        backgroundColor: "#1d7dc2",
     },
     media: {
         height: 200,
@@ -19,8 +23,10 @@ const useStyles = makeStyles({
 });
 
 export default function CardFood(props) {
-    const { name, cuisine, description, img_url, rating } = props;
+    const { locaiton_id, food_id } = useParams();
+    const { name, cuisine, description, img_url, rating, removeFood } = props;
     const classes = useStyles();
+
 
     return (
         <Card className={classes.root}>
@@ -52,12 +58,14 @@ export default function CardFood(props) {
             </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="small" color="primary">
-                Edit
-            </Button>
-            <Button size="small" color="primary">
-                Delete
-            </Button>
+                <Link to={`/locations/${locaiton_id}/foods/${food_id}/edit`}>
+                    <Button size="small" color="primary">
+                        Edit
+                    </Button>
+                </Link>
+                    <Button size="small" color="primary" onClick={() => removeFood(locaiton_id,food_id)}>
+                        Delete
+                    </Button>
             </CardActions>
         </Card>
     );

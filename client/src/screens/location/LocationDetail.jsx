@@ -102,29 +102,6 @@ export default function LocationDetail(props) {
                     </Select>
                 </FormControl>
             </div>
-                <div>
-                    {/* <FormControl variant="outlined">
-                        <InputLabel id="demo-simple-select-outlined-label">Cuisine</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        value={filter.cuisine}
-                        onChange={handleChange}
-                        label="Cuisine"
-                        >
-                        <MenuItem value="All">
-                            <em>All</em>
-                        </MenuItem>
-                        <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
-                        <MenuItem value={"Entree"}>Entree</MenuItem>
-                        <MenuItem value={"Dessert"}>Dessert</MenuItem>
-                        <MenuItem value={"Snack"}>Snack</MenuItem>
-                        <MenuItem value={"Beverage"}>Beverage</MenuItem>
-                        <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
-                        </Select>
-                    </FormControl> */}
-                    
-                </div>
                 <div className="location-detail-food-cards">
                     {filterFoods.map(food => (
                         <React.Fragment key={food.id}>
@@ -151,7 +128,8 @@ export default function LocationDetail(props) {
                     </div>
                 }
                 <div className="location-detail-description-card">
-                    <div>{location?.description}
+                    <div>
+                        {location?.description}
                     </div>
                 </div>
             </div>
