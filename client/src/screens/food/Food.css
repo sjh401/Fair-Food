@@ -22,6 +22,7 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
+    align-content: center;
     align-items: center;
     background-color: #c30c24;
     margin: 20px;
@@ -33,6 +34,7 @@
     text-align: left;
     font-size: small;
     color: #f8f7ff;
+
 }
 
 .food-create-container {

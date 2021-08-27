@@ -45,7 +45,7 @@ export default function FoodCreate(props) {
             [name]: value
         }))
     }
-    console.log(formData)
+
     const handleClose = () => {
         setOpen(false);
     };
