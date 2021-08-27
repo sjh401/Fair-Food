@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -57,12 +56,16 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
+    text-align: left;
     background-color: #c30c24;
     height: 55vh;
     border-radius: 20px;
     margin: 2.5vh 2.5vw;
     padding: 2.5vh;
     overflow-y: scroll;
+    color: #f8f7ff;
+    font-size: larger;
 }
 
 .location-detail-select {

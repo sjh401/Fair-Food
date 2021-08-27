@@ -1,4 +1,6 @@
 import React from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,19 +14,31 @@ import StarRatings from 'react-star-ratings';
 const useStyles = makeStyles({
     root: {
         width: 400,
+        borderRadius: 40,
+        backgroundColor: "#1d7dc2",
+        boxShadow: '0px 2px 8px #333432',
+        
     },
     media: {
         height: 200,
     },
+    button: {
+        color: '#f8f7ff'
+    },
+    link: {
+        textDecoration: 'none'
+    }
 });
 
 export default function CardFood(props) {
-    const { name, cuisine, description, img_url, rating } = props;
+    const { locaiton_id, food_id } = useParams();
+    const { name, cuisine, description, img_url, rating, removeFood } = props;
     const classes = useStyles();
+
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea >
             <CardMedia
                 className={classes.media}
                 image={img_url}
@@ -52,12 +66,14 @@ export default function CardFood(props) {
             </CardContent>
             </CardActionArea>
             <CardActions>
-            <Button size="small" color="primary">
-                Edit
-            </Button>
-            <Button size="small" color="primary">
-                Delete
-            </Button>
+                <Link to={`/locations/${locaiton_id}/foods/${food_id}/edit`} className="card-food-link" className={classes.link}>
+                    <Button size="small" color="primary" className={classes.button}>
+                        Edit
+                    </Button>
+                </Link>
+                    <Button size="small" color="primary" onClick={() => removeFood(locaiton_id,food_id)} className={classes.button}>
+                        Delete
+                    </Button>
             </CardActions>
         </Card>
     );

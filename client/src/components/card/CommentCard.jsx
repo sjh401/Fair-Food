@@ -20,12 +20,12 @@ export default function CommentCard(props) {
                     <div>
                         {comment.message}
                     </div>
-                    <div>
+                    <div className="comment-card-container-addons">
                         <div>
                             {getUsername(comment)}
                         </div>
                         {(currentUser?.id === comment.user_id) &&
-                        <div>
+                        <div className="comment-card-container-ud">
                             <Link to={`/locations/${food.location_id}/foods/${food.id}/comments/${comment.id}`}>Edit</Link>
                             <button onClick={() => removeComment(food.location_id, food.id, comment.id)}>Delete</button>
                         </div>

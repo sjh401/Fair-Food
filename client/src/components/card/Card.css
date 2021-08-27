@@ -25,6 +25,10 @@
 }
 
 .food-card-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     margin: 10px 25px;
     height: 200px;
     width: 200px;
@@ -42,3 +46,20 @@
 .food-card-description {
     display: none;
 }
+
+.comment-card-container {
+    display: flex;
+    flex-flow: column wrap;
+    color: #f8f7ff;
+}
+.comment-card-container-addons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+/* .comment-card-container-ud {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+} */

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CommentCard from '../../components/card/CommentCard';
 
-import StarRatings from 'react-star-ratings';
 import './Food.css'
 import CardFood from '../../components/card/CardFood';
 
@@ -59,6 +58,8 @@ export default function FoodDetail(props) {
                         description={food?.description}
                         img_url={food?.img_url}
                         rating={(food?.rating) ? food.rating/2: 1}
+                        removeFood={removeFood}
+                        location_id={food?.location_id}
                     />
                 </div>
                 <div className="food-detail-comments">
