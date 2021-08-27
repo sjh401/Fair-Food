@@ -25,7 +25,7 @@ export default function FoodEdit(props) {
 
     useEffect(() => {
         const prefillFormData = () => {
-            const foodItem = allFoods.find(food => food.id === Number(food_id));
+            const foodItem = allFoods?.find(food => food.id === Number(food_id));
             setFormData({ 
                 name: foodItem.name,
                 cuisine: foodItem.cuisine,

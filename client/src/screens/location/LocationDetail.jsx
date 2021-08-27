@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -19,14 +18,6 @@ const useStyles = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
-    formControl: {
-        // backgroundColor: '#1d7dc2',
-        // color: '#f8f7ff',
-        // borderRadius: 4,
-        // paddingRight: 4,
-        // paddingLeft: 4,
-    }
-
 }));
 
 export default function LocationDetail(props) {
@@ -111,6 +102,9 @@ export default function LocationDetail(props) {
                                     cuisine={food.cuisine}
                                     description={food.description}
                                     img_url={food.img_url}
+                                    currentUser={currentUser}
+                                    location_id={location_id}
+                                    food_id={food.id}
                                 />
                             </Link>
                         </React.Fragment>

@@ -41,9 +41,18 @@ footer {
     color: #f8f7ff;
 }
 .icons {
-    color: #333432
+    color: #f8f7ff
 }
 
+.link-bar {
+    color: #f8f7ff;
+    margin-right: 20px;
+}
+
+.hamburger-link {
+    color: #1d7dc2;
+    text-decoration: none;
+}
 
 
 /* color palette

@@ -5,7 +5,25 @@ import CommentCard from '../../components/card/CommentCard';
 import './Food.css'
 import CardFood from '../../components/card/CardFood';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+        backgroundColor: '#1d7dc2',
+        color: '#f8f7ff',
+        width: 50,
+        height: 20,
+        '&:hover': {
+            backgroundColor: '#f8f7ff',
+            color: '#1d7dc2'
+        },
+    },
+}));
+
 export default function FoodDetail(props) {
+    const classes = useStyles();
+
     const { 
         allFoods, 
         removeFood, 
@@ -15,24 +33,25 @@ export default function FoodDetail(props) {
         createComment,
         removeComment
     } = props;
+
     const { location_id, food_id } = useParams();
     const [ food, setFood ] = useState([]);
     const [ comments, setComments ] = useState([]);
     const [ formData, setFormData ] = useState({
         message: ''
     });
-
+    
     useEffect(() => {
         const oneFood = allFoods.find(food => {
             return food.id === Number(food_id)
         });
         setFood(oneFood);
-    },[allFoods, food_id])
+    },[allFoods, food_id, currentUser])
 
     useEffect(() => {
         const foodComments = allComments.filter(comment => comment?.food_id === Number(food_id));
         setComments(foodComments);
-    },[allComments, food_id])
+    },[allComments, food_id, currentUser])
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,12 +60,6 @@ export default function FoodDetail(props) {
             [name]: value
         }))
     }
-    // const halfTheRating = () => {
-    //     if(food.rating){
-    //         return (food.rating)/2
-    //     }
-    // }
-
 
     return (
         <>
@@ -59,7 +72,8 @@ export default function FoodDetail(props) {
                         img_url={food?.img_url}
                         rating={(food?.rating) ? food.rating/2: 1}
                         removeFood={removeFood}
-                        location_id={food?.location_id}
+                        location_id={location_id}
+                        food_id={food_id}
                     />
                 </div>
                 <div className="food-detail-comments">
@@ -77,7 +91,9 @@ export default function FoodDetail(props) {
                                 value={formData.message}
                                 onChange={handleChange}
                             />
-                            <button>Post</button>
+                            <Button variant="contained" color="primary" className={classes.button}>
+                                post
+                            </Button>
                         </form>
                     </div>
                     <CommentCard
@@ -86,6 +102,8 @@ export default function FoodDetail(props) {
                         allUsers={allUsers}
                         removeComment={removeComment}
                         food={food}
+                        location_id={location_id}
+                        food_id={food_id}
                     />
                 </div>
             </div>
