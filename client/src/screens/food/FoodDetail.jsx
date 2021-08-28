@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#f8f7ff',
         width: 40,
         height: 20,
+        margin: '5px 0 0 10px',
         '&:hover': {
             backgroundColor: '#f8f7ff',
             color: '#1d7dc2'
@@ -23,7 +24,25 @@ const useStyles = makeStyles((theme) => ({
     text: {
         width: 300,
         height: 'auto',
+        backgroundColor: '#f8f7ff',
+        borderRadius: 5,
+        borderColor: '#1d7dc2',
+        '& label.Mui-focused': {
+            color: '#e4b612',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#f8f7ff',
+            },
+            '&:hover fieldset': {
+                borderColor: '#1d7dc2',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#e4b612',
+            },
     }
+
+}
 }));
 
 export default function FoodDetail(props) {
@@ -69,7 +88,7 @@ export default function FoodDetail(props) {
     return (
         <>
             <div className="food-detail-grid">
-                <div className="food-details">
+                {/* <div className="food-details"> */}
                     <CardFood 
                         name={food?.name}
                         cuisine={food?.cuisine}
@@ -79,8 +98,10 @@ export default function FoodDetail(props) {
                         removeFood={removeFood}
                         location_id={location_id}
                         food_id={food_id}
+                        currentUser={currentUser}
+                        user_id={food?.user_id}
                     />
-                </div>
+                {/* </div> */}
                 <div className="food-detail-comments">
                 {currentUser && 
                     <div className="food-detail-create-comment">
@@ -98,10 +119,11 @@ export default function FoodDetail(props) {
                             variant="outlined"
                             value={formData.message}
                             onChange={handleChange} />
-                        <div>posting as {currentUser?.username}</div>
+                        <div>posting as {currentUser?.username} 
                         <Button type="submit" variant="contained" color="primary" className={classes.button}>
                                 Post
                         </Button>
+                        </div>
                         </form>
                     </div>}
                     <CommentCard

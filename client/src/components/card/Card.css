@@ -72,6 +72,7 @@
     flex-flow: column;
     color: #f8f7ff;
     width: 25vw;
+    min-width: 300px;
     height: auto;
     overflow-y: auto;
 }
@@ -111,9 +112,11 @@
         height: 175px;
         width: 175px;
     }
-    
     .food-card-image {
         height: 75px;
         width: 75px;
+    }
+    .comment-card-container {
+        width: 300px;
     }
 }

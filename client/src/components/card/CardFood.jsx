@@ -10,17 +10,26 @@ import Typography from '@material-ui/core/Typography';
 import StarRatings from 'react-star-ratings';
 
 import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 export const cardFoodCSS = makeStyles((theme) => ({
     root: {
-        width: '40vw',
-        height: '50vh',
-        borderRadius: 40,
+        gridArea: '1/1/3/4',
+        justifySelf: 'center',
+        width: '40vmin',
+        height: '70vmin',
+        margin: 50,
+        minWidth: 350,
+        minHeight: 600,
+        borderRadius: 20,
         backgroundColor: "#1d7dc2",
         boxShadow: '0px 2px 8px #333432',
     },
     media: {
-        height: '30vh',
+        width: '40vmin',
+        borderRadius: '20px 20px 0 0',
+        minWidth: 350,
+        maxHeight: 300,
     },
     button: {
         color: '#f8f7ff',
@@ -30,11 +39,12 @@ export const cardFoodCSS = makeStyles((theme) => ({
     },
     text: {
         color: '#f8f7ff',
+        overFlow: 'auto'
     }
 }));
 
 export default function CardFood(props) {
-    const { name, cuisine, description, img_url, rating, removeFood, location_id, food_id } = props;
+    const { name, cuisine, description, img_url, rating, removeFood, location_id, food_id, currentUser, user_id } = props;
     const classes = cardFoodCSS();
 
     return (
@@ -42,8 +52,9 @@ export default function CardFood(props) {
             <CardActionArea >
             <CardMedia
                 className={classes.media}
-                image={img_url}
-                title={name}
+                component="img"
+                src={img_url}
+                alt={name}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div"  className={classes.text}>
@@ -67,14 +78,18 @@ export default function CardFood(props) {
             </CardContent>
             </CardActionArea>
             <CardActions>
-                <Link to={`/locations/${location_id}/foods/${food_id}/edit`} className={classes.link}>
-                    <Button size="small" color="primary" className={classes.button}>
-                        Edit
-                    </Button>
-                </Link>
+                {(currentUser?.id === user_id) &&
+                <React.Fragment>
+                    <Link to={`/locations/${location_id}/foods/${food_id}/edit`} className={classes.link}>
+                        <Button size="small" color="primary" className={classes.button}>
+                            Edit
+                        </Button>
+                    </Link>
                     <Button size="small" color="primary" onClick={() => removeFood(location_id,food_id)} className={classes.button}>
                         Delete
                     </Button>
+                </React.Fragment>
+                }
             </CardActions>
         </Card>
     );
