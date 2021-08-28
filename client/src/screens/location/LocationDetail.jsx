@@ -66,47 +66,44 @@ export default function LocationDetail(props) {
         <div className="location-detail-grid">
             <div className="location-detail-header">
                 <h1>{location?.name}</h1>
-                
             </div>
             <div className="location-detail-foods">
-            <div>
-                <FormControl className={classes.formControl}>
-                    <Select
-                    labelId="demo-controlled-open-select-label"
-                    id="demo-controlled-open-select"
-                    open={open}
-                    onClose={handleClose}
-                    onOpen={handleOpen}
-                    value={filter.cuisine}
-                    onChange={handleChange}
-                    // style={{color:'#f8f7ff'}}
-                    >
-                    <MenuItem value="All" >
-                        <em>Filter by Cuisine</em>
-                    </MenuItem>
-                    <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
-                    <MenuItem value={"Entree"}>Entree</MenuItem>
-                    <MenuItem value={"Dessert"}>Dessert</MenuItem>
-                    <MenuItem value={"Snack"}>Snack</MenuItem>
-                    <MenuItem value={"Beverage"}>Beverage</MenuItem>
-                    <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
-                    </Select>
-                </FormControl>
-            </div>
+                <div>
+                    <FormControl className={classes.formControl}>
+                        <Select
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        open={open}
+                        onClose={handleClose}
+                        onOpen={handleOpen}
+                        value={filter.cuisine}
+                        onChange={handleChange}
+                        // style={{color:'#f8f7ff'}}
+                        >
+                        <MenuItem value="All" >
+                            <em>Filter by Cuisine</em>
+                        </MenuItem>
+                        <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
+                        <MenuItem value={"Entree"}>Entree</MenuItem>
+                        <MenuItem value={"Dessert"}>Dessert</MenuItem>
+                        <MenuItem value={"Snack"}>Snack</MenuItem>
+                        <MenuItem value={"Beverage"}>Beverage</MenuItem>
+                        <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
                 <div className="location-detail-food-cards">
                     {filterFoods.map(food => (
                         <React.Fragment key={food.id}>
-                            <Link to={`/locations/${location_id}/foods/${food.id}`} className="locations-container-link">
-                                <FoodCard
-                                    name={food.name}
-                                    cuisine={food.cuisine}
-                                    description={food.description}
-                                    img_url={food.img_url}
-                                    currentUser={currentUser}
-                                    location_id={location_id}
-                                    food_id={food.id}
-                                />
-                            </Link>
+                            <FoodCard
+                                name={food.name}
+                                cuisine={food.cuisine}
+                                description={food.description}
+                                img_url={food.img_url}
+                                currentUser={currentUser}
+                                location_id={location_id}
+                                food_id={food.id}
+                            />
                         </React.Fragment>
                     ))}
                 </div>
