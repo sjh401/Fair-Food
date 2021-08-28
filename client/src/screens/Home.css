@@ -18,30 +18,39 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    align-self: center;
     background-color: #c30c24;
     margin: 20px;
     border-radius: 20px;
     overflow: auto;
     width: 35vw;
+    height: 60vh;
+    min-width: 350px;
+    max-width: 675px;
+    min-height: 600px;
+    max-height: 800px;
 }
 .home-logo {
     width: 40vw;
-    max-width: 675px;
+    max-width: 600px;
+    min-width: 350px;
     border-radius: 20px;
 }
 
 @media only screen and (max-width: 850px) {
     .home-detail-grid {
         display: grid;
-        grid: 16vh 16vh 16vh 8vh 8vh 16vh/ 1fr 1fr 1fr;
+        grid: 200px 200px 200px 100px 100px 300px/ 1fr 1fr 1fr;
         justify-items: center;
+        overflow: auto;
     }
     .home-details {
-        grid-area: 1/1/4/4;
+        grid-area: 1/1/3/4;
         margin: 10px;
     }
     .home-foods-container {
-        grid-area: 5/1/7/4;
+        grid-area: 3/1/7/4;
         width: 300px;
+        height: 600px;
     }
 }

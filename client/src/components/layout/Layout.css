@@ -13,6 +13,7 @@ header {
     align-items: center;
     height: 10vh;
     width: 100vw;
+    min-height: 60px;
     background-color: #1d7dc2;
     color: #333432;
 }
@@ -20,9 +21,10 @@ header {
 footer {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 10vh;
     width: 100vw;
+    min-height: 60px;
     background-color: #1d7dc2;
     color: #333432;
 }
