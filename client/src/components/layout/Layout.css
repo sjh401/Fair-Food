@@ -1,6 +1,7 @@
 main {
     height: 80vh;
     width: 100vw;
+    min-height: 650px;
     background-color: #e4b612;
     color: #333432;
     overflow-y: auto;

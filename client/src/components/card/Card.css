@@ -4,16 +4,20 @@
     justify-content: center;
     align-items: center;
     margin: 20px 20px;
-    height: 175px;
-    width: 175px;
+    height: 20vmin;
+    width: 20vmin;
+    min-height: 175px;
+    min-width: 175px;
     background-color: #f8f7ff;
     border-radius: 10%;
     padding: 10px;
 }
 
 .location-card-image {
-    height: 100px;
-    width: 100px;
+    height: 12vmin;
+    width: 12vmin;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .location-card-div {
@@ -40,7 +44,6 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-
 }
 
 .food-card-description {
@@ -69,6 +72,7 @@
     flex-flow: column;
     color: #f8f7ff;
     width: 25vw;
+    min-width: 300px;
     height: auto;
     overflow-y: auto;
 }
@@ -103,5 +107,16 @@
     }
     .comment-card-container {
         width: 60vw;
+    }
+    .food-card-container {
+        height: 175px;
+        width: 175px;
+    }
+    .food-card-image {
+        height: 75px;
+        width: 75px;
+    }
+    .comment-card-container {
+        width: 300px;
     }
 }
