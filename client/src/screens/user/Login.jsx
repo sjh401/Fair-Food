@@ -69,6 +69,7 @@ export default function Login( {handleLogin} ) {
                     <TextField 
                         required 
                         id="outlined-basic" 
+                        type="password"
                         label="Password" 
                         name="password"
                         variant="outlined"
