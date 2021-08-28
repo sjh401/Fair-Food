@@ -4,16 +4,20 @@
     justify-content: center;
     align-items: center;
     margin: 20px 20px;
-    height: 175px;
-    width: 175px;
+    height: 20vmin;
+    width: 20vmin;
+    min-height: 175px;
+    min-width: 175px;
     background-color: #f8f7ff;
     border-radius: 10%;
     padding: 10px;
 }
 
 .location-card-image {
-    height: 100px;
-    width: 100px;
+    height: 12vmin;
+    width: 12vmin;
+    min-height: 100px;
+    min-width: 100px;
 }
 
 .location-card-div {

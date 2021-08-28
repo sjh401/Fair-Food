@@ -19,7 +19,8 @@
     align-items: center;
     background-color: #c30c24;
     height: 70vh;
-    width: 90vw;
+    width: 85vw;
+    min-height: 500px;
     border-radius: 20px;
     overflow: auto;
 }
