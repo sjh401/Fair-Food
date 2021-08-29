@@ -71,45 +71,7 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 
 #### Wireframes
 
-![p4-wireframce - Window (7)](https://user-images.githubusercontent.com/85095722/130714931-bbeeec44-1990-43e1-b49e-a77a975aa746.png)
-- Desktop Landing
-
-![p4-wireframce - Window (6)](https://user-images.githubusercontent.com/85095722/130710969-feab2046-f95c-4024-99cb-49701016bb6e.png)
-- Desktop Login
-
-![p4-wireframce - Window (4)](https://user-images.githubusercontent.com/85095722/130710938-3f6f9ff3-d91a-45d5-a800-5b4caeaa85ce.png)
-- Desktop Locations
-
-![p4-wireframce - Window](https://user-images.githubusercontent.com/85095722/130710883-9d0d9c40-7b40-44f5-a656-dc78d1ec1951.png)
-- Desktop Location Details
-
-![p4-wireframce - Window (1)](https://user-images.githubusercontent.com/85095722/130711067-c1510af0-a5a4-4a9c-b533-26df621746a2.png)
-- Desktop Food Details & Comments
-
-![p4-wireframce - Window (3)](https://user-images.githubusercontent.com/85095722/130711128-a0e84b40-6a1f-4108-a720-4e7f34ca921b.png)
-- Desktop Food Create
-
-![p4-wireframce - Window (2)](https://user-images.githubusercontent.com/85095722/130711120-9ea648b3-0458-4ead-bfb2-073ff91b8b73.png)
-- Desktop About
-
-![p4-wireframce - Window (5)](https://user-images.githubusercontent.com/85095722/130711271-3d0b6145-f871-45b3-b639-d93d499dda71.png)
-- Desktop Contact
-
-![p4-wireframce - Phone X@1 600000023841858x (5)](https://user-images.githubusercontent.com/85095722/130719358-b8baaffa-4e42-4bcc-b650-26db85512d55.png)
-- Mobile Register
-
-![p4-wireframce - Phone X@1 600000023841858x (2)](https://user-images.githubusercontent.com/85095722/130719263-a49497c8-20de-439f-b75a-f94e23af65fe.png)
-- Mobile Food Detail
-
-![p4-wireframce - Phone X@1 600000023841858x (3)](https://user-images.githubusercontent.com/85095722/130719462-d425545e-ade9-4258-8803-e92a085da7f1.png)
-- Mobile Food Edit
-
-![p4-wireframce - Phone X@1 600000023841858x (4)](https://user-images.githubusercontent.com/85095722/130719336-331091fe-18b9-4ecd-96f1-7ce57d769a60.png)
-- Mobile Contact
-
-![p4-wireframce - Tablet](https://user-images.githubusercontent.com/85095722/130711004-8ccbd336-802e-4359-b34d-2095594f03dc.png)
-- Tablet Food Detail
-
+https://whimsical.com/p4-wireframce-St79DqtTmFVyQA4Ls6Q9G6
 
 #### Component Architecture
 
