@@ -124,7 +124,7 @@ export default function FoodEdit(props) {
             [name]: (value*2)
         }))
     }
-    console.log(formData)
+
     return (        
         <div className="food-create">
             <div className="food-create-container">
@@ -148,7 +148,6 @@ export default function FoodEdit(props) {
                     <StyledRating 
                         name="rating" 
                         precision={0.5} 
-                        name="rating"
                         value={(rating)/2}
                         onChange={changeRating}
                     />
@@ -163,9 +162,7 @@ export default function FoodEdit(props) {
                         value={cuisine}
                         onChange={handleChange}
                     >
-                        <MenuItem id="All" >
-                            <em>Cuisine</em>
-                        </MenuItem>
+                        <MenuItem id="All" ><em>Cuisine</em></MenuItem>
                         <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
                         <MenuItem value={"Entree"}>Entree</MenuItem>
                         <MenuItem value={"Dessert"}>Dessert</MenuItem>

@@ -1,7 +1,7 @@
 .location-card-container {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: flex-start;
     align-items: center;
     margin: 20px 20px;
     height: 20vmin;
@@ -11,6 +11,7 @@
     background-color: #f8f7ff;
     border-radius: 10%;
     padding: 10px;
+    overflow: auto;
 }
 
 .location-card-image {
@@ -19,13 +20,23 @@
     min-height: 100px;
     min-width: 100px;
 }
+.disappear {
+    display: none;
+}
 
 .location-card-div {
     padding: 0 0 5px 0;
 }
 
 .location-card-description {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vmin;
+    width: 20vmin;
+    min-height: 100px;
+    min-width: 100px;
+    overflow: auto;
 }
 
 .food-card-container {
@@ -99,6 +110,16 @@
     color: #f8f7ff;
     text-decoration: none;
     margin: 0 5px;
+}
+.food-detail-comment-edit {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    background-color: #1d7dc2;
+    height: 70vmin;
+    min-width: 350px;
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 850px) {
