@@ -16,11 +16,12 @@ export const cardFoodCSS = makeStyles((theme) => ({
     root: {
         gridArea: '1/1/3/4',
         justifySelf: 'center',
+        overflow: 'scroll',
         width: '40vmin',
         height: '70vmin',
         margin: 50,
         minWidth: 350,
-        minHeight: 600,
+        minHeight: 550,
         borderRadius: 20,
         backgroundColor: "#1d7dc2",
         boxShadow: '0px 2px 8px #333432',
@@ -29,7 +30,7 @@ export const cardFoodCSS = makeStyles((theme) => ({
         width: '40vmin',
         borderRadius: '20px 20px 0 0',
         minWidth: 350,
-        maxHeight: 300,
+        maxHeight: 325,
     },
     button: {
         color: '#f8f7ff',
