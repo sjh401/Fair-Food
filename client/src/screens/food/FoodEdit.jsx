@@ -1,26 +1,66 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './Food.css'
 
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import Rating from '@material-ui/lab/Rating';
+
 
 const useStyles = makeStyles((theme) => ({
-    button: {
-        backgroundColor: '#1d7dc2',
+    submit: {
         width: '16vw',
+        minWidth: '300px',
+        margin: 5,
+        backgroundColor: '#1d7dc2',
+        color: '#f8f7ff',
         '&:hover': {
             backgroundColor: '#f8f7ff',
             color: '#1d7dc2'
         },
     },
+    cancel: {
+        width: '16vw',
+        minWidth: '300px',
+        backgroundColor: '#c30c24',
+        color: '#f8f7ff',
+        '&:hover': {
+            backgroundColor: '#e4b612',
+            color: '#333432'
+        },
+    },
     text: {
-        width: '16vw'
-    }
+        width: '16vw',
+        minWidth: '300px',
+        textDecoration: 'none',
+        margin: 5,
+    },
+
 }));
+
+const StyledRating = withStyles({
+    root: {
+        display: 'flex',
+        margin: 5,
+        width: '16vw',
+        minWidth: '300px',
+        fontSize: 50,
+        justifyContent: 'center',
+    },
+    iconFilled: {
+        color: '#e4b612',
+        width: 50,
+        height: 50,
+    },
+    iconHover: {
+        color: '#1d7dc2',
+        width: 60,
+        height: 60,
+    },
+})(Rating);
 export default function FoodEdit(props) {
     const [ formData, setFormData ] = useState({
         name: '',
@@ -76,16 +116,26 @@ export default function FoodEdit(props) {
     const handleOpen = () => {
         setOpen(true);
     };
-    return (
-        <div className="food-create-container">
-            <form 
-                className="food-create-form"
-                onSubmit={(e) => {
-                e.preventDefault()
-                // call the create dog function and pass in the formData;
-                updateFood(location_id, food_id, formData)
-                }}
-                >
+
+    function changeRating(e) {
+        const { name, value } = e.target;
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: (value*2)
+        }))
+    }
+    console.log(formData)
+    return (        
+        <div className="food-create">
+            <div className="food-create-container">
+                <form 
+                    className="food-create-form"
+                    onSubmit={(e) => {
+                    e.preventDefault()
+                    updateFood(location_id, food_id, formData)
+                    }}
+                    >
+                    <div className="food-create-title">Add a Food Item</div>
                     <TextField 
                         className={classes.text}
                         required 
@@ -95,40 +145,34 @@ export default function FoodEdit(props) {
                         variant="outlined"
                         value={name}
                         onChange={handleChange} />
-                    <br/>
-                    <TextField 
-                        className={classes.text}
-                        required 
-                        id="outlined-basic" 
-                        label="Rating" 
+                    <StyledRating 
+                        name="rating" 
+                        precision={0.5} 
                         name="rating"
-                        variant="outlined"
-                        value={rating}
-                        onChange={handleChange} />
-                    <br/>
+                        value={(rating)/2}
+                        onChange={changeRating}
+                    />
                     <Select
-                    className={classes.text}
-                    labelId="demo-controlled-open-select-label"
-                    id="demo-controlled-open-select"
-                    open={open}
-                    onClose={handleClose}
-                    onOpen={handleOpen}
-                    name="cuisine"
-                    value={cuisine}
-                    onChange={handleChange}
-                    // style={{color:'#f8f7ff'}}
+                        className={classes.text}
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        open={open}
+                        onClose={handleClose}
+                        onOpen={handleOpen}
+                        name="cuisine"
+                        value={cuisine}
+                        onChange={handleChange}
                     >
-                    <MenuItem id="All" >
-                        <em>Cuisine</em>
-                    </MenuItem>
-                    <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
-                    <MenuItem value={"Entree"}>Entree</MenuItem>
-                    <MenuItem value={"Dessert"}>Dessert</MenuItem>
-                    <MenuItem value={"Snack"}>Snack</MenuItem>
-                    <MenuItem value={"Beverage"}>Beverage</MenuItem>
-                    <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
+                        <MenuItem id="All" >
+                            <em>Cuisine</em>
+                        </MenuItem>
+                        <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
+                        <MenuItem value={"Entree"}>Entree</MenuItem>
+                        <MenuItem value={"Dessert"}>Dessert</MenuItem>
+                        <MenuItem value={"Snack"}>Snack</MenuItem>
+                        <MenuItem value={"Beverage"}>Beverage</MenuItem>
+                        <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
                     </Select>
-                    <br />
                     <TextField 
                         required 
                         className={classes.text}
@@ -138,7 +182,6 @@ export default function FoodEdit(props) {
                         variant="outlined"
                         value={food_stall}
                         onChange={handleChange} />
-                    <br/>
                     <TextField 
                         required 
                         className={classes.text}
@@ -148,7 +191,6 @@ export default function FoodEdit(props) {
                         variant="outlined"
                         value={description}
                         onChange={handleChange} />
-                    <br/>
                     <TextField 
                         required 
                         className={classes.text}
@@ -158,11 +200,16 @@ export default function FoodEdit(props) {
                         variant="outlined"
                         value={img_url}
                         onChange={handleChange} />
-                    <br/>
-                    <Button type="submit" variant="contained" color="primary" className={classes.button}>
-                            Create New Food
+                    <Button type="submit" variant="contained" className={classes.submit}>
+                            Update
                     </Button>
-            </form>
+                    <Link to={`/locations/${location_id}/foods/${food_id}`} className={classes.text}>
+                        <Button type="submit" variant="contained" className={classes.cancel}>
+                                Cancel
+                        </Button>
+                    </Link>
+                </form>
+            </div>
         </div>
     )
 }

@@ -88,7 +88,6 @@ export default function FoodDetail(props) {
     return (
         <>
             <div className="food-detail-grid">
-                {/* <div className="food-details"> */}
                     <CardFood 
                         name={food?.name}
                         cuisine={food?.cuisine}
@@ -101,7 +100,6 @@ export default function FoodDetail(props) {
                         currentUser={currentUser}
                         user_id={food?.user_id}
                     />
-                {/* </div> */}
                 <div className="food-detail-comments">
                 {currentUser && 
                     <div className="food-detail-create-comment">
@@ -119,11 +117,12 @@ export default function FoodDetail(props) {
                             variant="outlined"
                             value={formData.message}
                             onChange={handleChange} />
-                        <div>posting as {currentUser?.username} 
-                        <Button type="submit" variant="contained" color="primary" className={classes.button}>
-                                Post
-                        </Button>
-                        </div>
+                            <div>
+                                posting as {currentUser?.username} 
+                                <Button type="submit" variant="contained" color="primary" className={classes.button}>
+                                        Post
+                                </Button>
+                            </div>
                         </form>
                     </div>}
                     <CommentCard
