@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
+
 import About from '../screens/about/About';
-import CommentEdit from '../screens/CommentEdit';
 import Contact from '../screens/contact/Contact';
 import FoodCreate from '../screens/food/FoodCreate';
 import FoodDetail from '../screens/food/FoodDetail';
@@ -9,9 +9,8 @@ import FoodEdit from '../screens/food/FoodEdit';
 import Home from '../screens/Home';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
+
 import { deleteComment, getAllComments, postComment, putComment } from '../services/comments';
-
-
 import { deleteFood, getAllFoods, postFood, putFood } from '../services/foods';
 import { getAllLocations } from '../services/locations';
 
@@ -21,7 +20,6 @@ export default function Container(props) {
     const [ allComments, setAllComments ] = useState([]);
     const { currentUser, allUsers } = props;
     const history = useHistory();
-    // const { currentUser } = props;
 
     useEffect(() => {
         const fetchLocations = async () => {
@@ -94,13 +92,6 @@ export default function Container(props) {
     return (
         <>
             <Switch>
-            <Route path="/locations/:location_id/foods/:food_id/comments/:comment_id">
-                <CommentEdit
-                    updateComment={updateComment}
-                    currentUser={currentUser}
-                    allComments={allComments}
-                />
-            </Route>
                 <Route path="/locations/:location_id/foods/:food_id/edit">
                     <FoodEdit 
                         allFoods={allFoods}
@@ -116,13 +107,14 @@ export default function Container(props) {
                 </Route>
                 <Route path="/locations/:location_id/foods/:food_id">
                     <FoodDetail
-                        allFoods={allFoods}
-                        removeFood={removeFood}
-                        allComments={allComments}
                         currentUser={currentUser}
                         allUsers={allUsers}
+                        allFoods={allFoods}
+                        allComments={allComments}
+                        removeFood={removeFood}
                         createComment={createComment}
                         removeComment={removeComment}
+                        updateComment={updateComment}
                     />
                 </Route>
                 <Route path="/locations/:location_id">

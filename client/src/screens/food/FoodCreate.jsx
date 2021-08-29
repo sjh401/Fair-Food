@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import StarRatings from 'react-star-ratings/build/star-ratings';
 
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -102,8 +101,6 @@ export default function FoodCreate(props) {
         }))
     }
 
-    console.log(formData)
-
     return (
         <div className="food-create">
             <div className="food-create-container">
@@ -127,7 +124,6 @@ export default function FoodCreate(props) {
                     <StyledRating 
                         name="rating" 
                         precision={0.5} 
-                        name="rating"
                         value={(rating)/2}
                         onChange={(e) => changeRating(e)}
                     />
