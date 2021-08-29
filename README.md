@@ -71,7 +71,7 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 
 #### Wireframes
 
-https://whimsical.com/p4-wireframce-St79DqtTmFVyQA4Ls6Q9G6
+<a href="https://whimsical.com/p4-wireframce-St79DqtTmFVyQA4Ls6Q9G6">Destination Hot Dog Wireframes</a>
 
 #### Component Architecture
 
