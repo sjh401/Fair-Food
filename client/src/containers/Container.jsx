@@ -43,7 +43,7 @@ export default function Container(props) {
             setAllComments(comments);
         }
         fetchComments();
-    },[])
+    },[currentUser])
 
     const createFood = async (location_id, foodData) => {
         const newFood = await postFood(location_id, foodData);

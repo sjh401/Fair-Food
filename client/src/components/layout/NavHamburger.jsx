@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom"
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,9 +29,11 @@ export const navHamburgerCSS = makeStyles((theme) => ({
 }));
 
 export default function NavHamburger(props) {
+    const thingy = useRef(null);
     const [anchorEl, setAnchorEl] = useState(null);
     const [ links, setLinks ] = useState([])
     const  { handleLogout, currentUser } = props; 
+
     const open = Boolean(anchorEl);
 
     const classes = navHamburgerCSS();
@@ -63,8 +65,8 @@ export default function NavHamburger(props) {
     filterForUser()
 },[currentUser, handleLogout, classes.button, classes.link])
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+    const handleClick = () => {
+        setAnchorEl(thingy.current);
     };
     
     const handleClose = () => {
@@ -78,6 +80,7 @@ export default function NavHamburger(props) {
                 aria-controls="fade-menu"
                 aria-haspopup="true"
                 onClick={handleClick}
+                ref={thingy}
             >
                 <MoreVertIcon className="menu-icon" />
             </MenuIcon>
@@ -92,10 +95,10 @@ export default function NavHamburger(props) {
                 style: {
                     maxHeight: 450,
                     width: '15vw',
+                    minWidth: 250,
                     backgroundColor: '#f8f7ff',
                     color: '#1d7dc2',
                 },}}
-
                 >
                 {links?.map((option, index) => (
                 <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>

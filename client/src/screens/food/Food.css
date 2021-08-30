@@ -1,6 +1,6 @@
 .food-detail-grid {
     display: grid;
-    grid: 40vh 40vh/ 1fr 1fr 1fr 1fr 1fr;
+    grid: 40vh 40vh/ 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .food-detail-image {
@@ -17,13 +17,14 @@
 }
 
 .food-detail-comments {
-    grid-area: 1/4/3/6;
+    grid-area: 1/4/3/7;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
     background-color: #c30c24;
     height: 70vmin;
+    width: 45vmin;
     min-width: 350px;
     margin: 50px;
     border-radius: 20px;
@@ -110,5 +111,7 @@
     .food-detail-comments {
         grid-area: 2/1/3/2;
         width: 350px;
+        height: 600px;
+        margin: 0;
     }
 }

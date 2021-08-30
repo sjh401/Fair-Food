@@ -36,12 +36,26 @@ const useStyles = makeStyles((theme) => ({
         margin: 5,
         backgroundColor: '#f8f7ff',
         borderRadius: 5,
+        '& label.Mui-focused': {
+            color: '#c30c24',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#f8f7ff',
+            },
+            '&:hover fieldset': {
+                borderColor: '#1d7dc2',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#e4b612',
+            },
+        }
     },
 
 }));
 export default function CommentEdit(props) {
     const [ formData, setFormData ] = useState({
-        message: ''
+        message: 'here is the message'
     });
     const { allComments, updateComment, toggle, setToggle, toEdit } = props;
     const { location_id, food_id} = useParams();
@@ -87,12 +101,14 @@ export default function CommentEdit(props) {
                     variant="outlined"
                     type="text"
                     name="message"
-                    value={formData.message}
+                    value={(formData.message) ? formData.message : 1}
                     onChange={handleChange}
                 />
+                <br />
                 <Button type="submit" variant="contained" className={classes.submit}>
                     Post
                 </Button>
+                <br />
                 <Button variant="contained" className={classes.cancel} onClick={() => setToggle(prevToggle => !prevToggle)}>
                     Cancel
                 </Button>

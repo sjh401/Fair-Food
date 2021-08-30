@@ -12,13 +12,16 @@ export const commentCardCSS = makeStyles((theme) => ({
         color: '#f8f7ff',
         width: 50,
         height: 20,
+        margin: 2,
         '&:hover': {
             backgroundColor: '#f8f7ff',
             color: '#1d7dc2'
         },
     },
     text: {
-        width: 300,
+        width: '25vw',
+        margin: 7,
+        minWidth: 300,
         height: 'auto',
         backgroundColor: '#f8f7ff',
         borderRadius: 5,
@@ -63,7 +66,11 @@ export default function CommentCard(props) {
 
     const getUsername = (comment) => {
         const commentUser = allUsers?.find(user => Number(user.id) === Number(comment.user_id))
-        return commentUser.username
+        return (
+            <div>
+                {commentUser?.username}
+            </div>
+        )
     }
 
     const handleChange = (e) => {
@@ -104,8 +111,8 @@ export default function CommentCard(props) {
                             value={formData.message}
                             onChange={handleChange} 
                         />
-                        <div>
-                            posting as {currentUser?.username} 
+                        <div className="comment-card-posting-user">
+                            posting as {currentUser.username} 
                             <Button type="submit" variant="contained" color="primary" className={classes.button}>
                                     Post
                             </Button>
@@ -120,9 +127,9 @@ export default function CommentCard(props) {
                 {comments?.map(comment => (
                     <div key={comment.id} className="comment-card">
                         <div className="comment-card-container-addons">
-                            <div>
+                            
                                 {getUsername(comment)}
-                            </div>
+                            
                             {(currentUser?.id === comment.user_id) &&
                             <div className="comment-card-container-ud">
                                 <Button 
