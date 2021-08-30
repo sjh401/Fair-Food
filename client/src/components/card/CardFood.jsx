@@ -7,9 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import StarRatings from 'react-star-ratings';
+import Rating from '@material-ui/lab/Rating';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import React from 'react';
 
 export const cardFoodCSS = makeStyles((theme) => ({
@@ -19,12 +19,11 @@ export const cardFoodCSS = makeStyles((theme) => ({
         overflow: 'scroll',
         width: '40vmin',
         height: '70vmin',
-        margin: 50,
+        margin: '50px 0px',
         minWidth: 350,
         minHeight: 550,
         borderRadius: 20,
         backgroundColor: "#1d7dc2",
-        boxShadow: '0px 2px 8px #333432',
     },
     media: {
         width: '40vmin',
@@ -39,10 +38,31 @@ export const cardFoodCSS = makeStyles((theme) => ({
         textDecoration: 'none',
     },
     text: {
+
+        display: 'flex',
         color: '#f8f7ff',
-        overFlow: 'auto'
-    }
+        overFlow: 'auto',
+        justifyContent: 'center',
+    },
+    
 }));
+
+const StyledRating = withStyles({
+    root: {
+        display: 'flex',
+        margin: 5,
+        width: '16vmin',
+        minWidth: '300px',
+        fontSize: 50,
+        justifyContent: 'center',
+        alignSelf: 'center',
+    },
+    iconFilled: {
+        color: '#e4b612',
+        minWidth: 50,
+        minHeight: 50,
+    },
+})(Rating);
 
 export default function CardFood(props) {
     const { name, cuisine, description, img_url, rating, removeFood, location_id, food_id, currentUser, user_id } = props;
@@ -61,14 +81,13 @@ export default function CardFood(props) {
                 <Typography gutterBottom variant="h5" component="div"  className={classes.text}>
                 {name}
                 </Typography>
-                <Typography variant="body2" component="div">
-                <StarRatings
-                    rating={rating}
-                    starDimension="25px"
-                    starRatedColor="#c30c24"
-                    starEmptyColor="#f8f7ff"
-                    starHoverColor="#1d7dc2"
-                />
+                <Typography variant="body2" component="div" className={classes.text}>
+                <StyledRating 
+                    readOnly
+                    name="rating" 
+                    precision={0.5} 
+                    value={(rating)/2}
+                    />
                 </Typography>
                 <Typography variant="body2" component="div" className={classes.text}>
                 {cuisine}

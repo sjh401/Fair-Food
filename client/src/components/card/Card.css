@@ -96,6 +96,9 @@
 .comment-card {
     margin: 20px;
 }
+.comment-card-posting-user {
+    margin: 0 7px;
+}
 
 .comment-message {
     background-color: #f8f7ff;
@@ -113,11 +116,12 @@
 }
 .food-detail-comment-edit {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: center;
     align-content: center;
     background-color: #1d7dc2;
     height: 70vmin;
+    width: 45vmin;
     min-width: 350px;
     border-radius: 20px;
 }
