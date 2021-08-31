@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import './Login.css'
 
+
 const navHamburgerCSS = makeStyles((theme) => ({
     button: {
         backgroundColor: '#1d7dc2',
@@ -15,23 +16,23 @@ const navHamburgerCSS = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
-    link: {
-        color: '#1d7dc2',
-        textDecoration: 'none',
-    },
-    linkBar: {
-        color: '#f8f7ff',
-        marginRight: 20,
+    buttonDark: {
+        backgroundColor: '#3f4045',
+        margin: '2px',
+        '&:hover': {
+            backgroundColor: '#30292f',
+            color: '#d4cdc3'
+        },
     }
 }));
 
-
-export default function Register( {handleRegister} ) {
+export default function Register(props) {
     const [ formData, setFormData ] = useState({
         username: '',
         email: '',
         password: ''
     })
+    const { handleRegister, darkMode } = props;
     const { username, password, email } = formData
     const classes = navHamburgerCSS();
 
@@ -46,16 +47,16 @@ export default function Register( {handleRegister} ) {
     return (
         <div className="login-grid">
             <div className="login-logo-container">
-                <img src="https://i.imgur.com/dHUKnwu.png" alt="destination hot dog logo" className="login-logo"/>
+                <img src={(darkMode === true) ? "https://i.imgur.com/eyLImzQ.png" : "https://i.imgur.com/xLr5h9x.png"} alt="destination hot dog logo" className="login-logo"/>
             </div>
-            <div className="login-container">
+            <div className={(darkMode === true) ? "login-container container-dark" : "login-container"}>
                 <form 
-                    className="login-form"
+                    className={(darkMode === true) ? "login-form form-dark" : "login-form"}
                     onSubmit={(e) => {
                     e.preventDefault()
                     handleRegister(formData)
                     }}>
-                    <h2 className="login-register">Register</h2>
+                    <h2 className={(darkMode === true) ? "login-register register-dark" : "login-register"}>Register</h2>
                     <br/>
                     <TextField 
                         required 
@@ -90,7 +91,7 @@ export default function Register( {handleRegister} ) {
                         <Button 
                             variant="contained" 
                             color="primary" 
-                            className={classes.button} 
+                            className={(darkMode === true) ? classes.buttonDark : classes.button}
                             type="submit"
                         >
                             Submit

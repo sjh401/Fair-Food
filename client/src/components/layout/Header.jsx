@@ -25,21 +25,19 @@ const CustomSwitch = withStyles({
 
 const Header = React.forwardRef((props, dark) => {
     const { currentUser, handleLogout, darkMode, setDarkMode } = props;
-    // const dark = useRef()
 
     const handleChange = (e) => {
         e.preventDefault();
         setDarkMode(prevDarkMode => !prevDarkMode)
     }
     
-    // console.log(darkMode)
     return (
         <header className={(darkMode === true) ? "header-dark": "header"}>
             <CustomSwitch 
                 onChange={handleChange}
                 ref={dark}
             />
-            <h1 className="project-title">Destination Hot Dog</h1>
+            <h1 className={(darkMode === true) ? "project-title title-dark" : "project-title"}>Destination Hot Dog</h1>
             <NavHamburger 
                 handleLogout={handleLogout}
                 currentUser={currentUser}

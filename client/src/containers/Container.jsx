@@ -18,7 +18,7 @@ export default function Container(props) {
     const [ allLocations, setAllLocations ] = useState([]);
     const [ allFoods, setAllFoods ] = useState([]);
     const [ allComments, setAllComments ] = useState([]);
-    const { currentUser, allUsers } = props;
+    const { currentUser, allUsers, darkMode } = props;
     const history = useHistory();
 
     useEffect(() => {
@@ -97,12 +97,14 @@ export default function Container(props) {
                         allFoods={allFoods}
                         updateFood={updateFood}
                         currentUser={currentUser}
+                        darkMode={darkMode}
                     />
                 </Route>
                 <Route path="/locations/:location_id/foods/new">
                     <FoodCreate
                         createFood={createFood}
                         currentUser={currentUser}
+                        darkMode={darkMode}
                     />
                 </Route>
                 <Route path="/locations/:location_id/foods/:food_id">
@@ -115,6 +117,7 @@ export default function Container(props) {
                         createComment={createComment}
                         removeComment={removeComment}
                         updateComment={updateComment}
+                        darkMode={darkMode}
                     />
                 </Route>
                 <Route path="/locations/:location_id">
@@ -122,22 +125,29 @@ export default function Container(props) {
                         allLocations={allLocations}
                         allFoods={allFoods}
                         currentUser={currentUser}
+                        darkMode={darkMode}
                     />
                 </Route>
                 <Route path="/about">
-                    <About />
+                    <About 
+                        darkMode={darkMode}
+                    />
                 </Route>
                 <Route path="/contact">
-                    <Contact />
+                    <Contact 
+                        darkMode={darkMode}
+                    />
                 </Route>
                 <Route path="/locations">
                     <Locations 
                         locations={allLocations}
+                        darkMode={darkMode}
                     />
                 </Route>
                 <Route to="/">
                     <Home 
                         allFoods={allFoods}
+                        darkMode={darkMode}
                     />
                 </Route>
             </Switch>

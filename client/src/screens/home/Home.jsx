@@ -19,7 +19,6 @@ export default function Home(props) {
         setSorted(array)
     },[allFoods])
 
-    console.log(props.darkMode)
     return (
         <div className="home-detail-grid">
             <div className="home-details">

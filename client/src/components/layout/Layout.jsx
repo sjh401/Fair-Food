@@ -1,12 +1,10 @@
-import { useRef, useState } from 'react';
 import Footer from './Footer'
 import Header from './Header'
 import './Layout.css'
 
 export default function Layout(props) {
-    const [ darkMode, setDarkMode ] = useState(false);
-    const dark = useRef()
-    console.log(dark)
+    const { darkMode, setDarkMode } = props;
+
     return (
         <>
             <Header 
@@ -14,13 +12,11 @@ export default function Layout(props) {
                 handleLogout={props.handleLogout}
                 darkMode={darkMode}
                 setDarkMode={setDarkMode}
-                ref={dark}
             />
             <main 
                 className={(darkMode === true) ? "layout-main main-dark": "layout-main"}
             >
                 {props.children}
-                
             </main>
             <Footer                 
                 darkMode={darkMode}
