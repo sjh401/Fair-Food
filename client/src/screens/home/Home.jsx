@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getTenIndecies, sortArray } from '../assets/functions';
-import FoodCard from '../components/card/FoodCard';
+import { getTenIndecies, sortArray } from '../../assets/functions';
+import FoodCard from '../../components/card/FoodCard';
 import './Home.css'
 
 export default function Home(props) {
@@ -19,6 +19,7 @@ export default function Home(props) {
         setSorted(array)
     },[allFoods])
 
+    console.log(props.darkMode)
     return (
         <div className="home-detail-grid">
             <div className="home-details">

@@ -11,13 +11,3 @@ export default function About() {
         </div>
     )
 }
-
-// <div className="about-grid">
-//             <div className="about-image">
-//                 <img src="https://i.imgur.com/dHUKnwu.png" alt="destination hot dog logo" className="home-logo"/>
-//             </div>
-//             <div className="about-container">
-//                 Software Engieneer with a passion for every food on a stick. 
-//                 From twinkies to corn dogs.
-//             </div>
-//         </div>

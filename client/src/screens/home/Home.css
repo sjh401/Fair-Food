@@ -22,7 +22,7 @@
     background-color: #c30c24;
     margin: 20px;
     border-radius: 20px;
-    overflow: auto;
+    overflow-y: auto;
     width: 35vw;
     height: 60vh;
     min-width: 350px;
@@ -35,6 +35,50 @@
     max-width: 600px;
     min-width: 350px;
     border-radius: 20px;
+}
+
+.contact-create-title {
+    margin: 0 0 50px 0;
+    font-size: larger;
+    color: #1d7dc2;
+}
+.contact-create-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    height: 70vh;
+    width: 30vw;
+    max-height: 750px;
+    max-width: 550px;
+    min-height: 500px;
+    min-width: 400px;
+    margin: 5vh 35vw;
+    background-color: #c30c24;
+    color: #f8f7ff;
+    border-radius: 20px;
+}
+
+.contact-create-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    height: 60vh;
+    width: 20vw;
+    max-height: 500px;
+    max-width: 400px;
+    min-height: 400px;
+    min-width: 240px;
+    background-color: #f8f7ff;
+    border-radius: 20px;
+}
+
+
+  /* dark mode */
+.contact-create-container-dark {
+    background-color: #02111b;
+    color: #d4cdc3;
 }
 
 @media only screen and (max-width: 850px) {

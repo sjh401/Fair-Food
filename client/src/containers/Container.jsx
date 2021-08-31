@@ -6,7 +6,7 @@ import Contact from '../screens/contact/Contact';
 import FoodCreate from '../screens/food/FoodCreate';
 import FoodDetail from '../screens/food/FoodDetail';
 import FoodEdit from '../screens/food/FoodEdit';
-import Home from '../screens/Home';
+import Home from '../screens/home/Home';
 import LocationDetail from '../screens/location/LocationDetail';
 import Locations from '../screens/location/Locations';
 
