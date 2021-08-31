@@ -61,8 +61,8 @@
 
 # puts "#{Food.count} foods created."
 
-300.times do
-    Comment.create!(message: Faker::Movies::HarryPotter.quote, user_id: rand(1..5), food_id: rand(1..72))
-end
+# 300.times do
+#     Comment.create!(message: Faker::Movies::HarryPotter.quote, user_id: rand(1..5), food_id: rand(1..72))
+# end
 
 # puts "#{Comment.count} comments created."
