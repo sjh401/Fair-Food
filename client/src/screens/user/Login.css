@@ -6,6 +6,7 @@
 .login-grid {
     display: grid;
     grid: 40vh 40vh/ 1fr 1fr 1fr;
+    align-content: center;
 }
 
 .login-logo-container {
@@ -14,12 +15,13 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 65vh;
-    width: auto;
     margin: 50px 100px;
-    max-width: 675px;
+    height: 70vmin;
+    width: 40vmin;
+    min-height: 500px;
+    min-width: 500px;
     max-height: 675px;
-    min-height: 350px;
+    max-width: 675px;
 }
 
 .login-container {
@@ -33,18 +35,21 @@
     margin: 50px;
     border-radius: 20px;
     overflow: auto;
-    height: 65vh;
-    width: 35vw;
-    max-width: 675px;
+    height: 70vmin;
+    width: 40vmin;
+    min-height: 500px;
+    min-width: 375px;
     max-height: 675px;
-    min-height: 350px;
+    max-width: 450px;
 }
 .login-logo {
-    height: 65vh;
+    height: 65vmin;
     width: auto;
     border-radius: 20px;
-    max-width: 675px;
-    max-height: 675px;
+    max-height: 600px;
+    max-width: 600px;
+    min-height: 300px;
+    min-width: 300px;
 }
 
 .home-link {
@@ -57,21 +62,35 @@
     justify-content: center;
     align-items: center;
     background-color: #f8f7ff;
-    height: 40vh;
-    width: 15vw;
-    padding: 50px 50px;
+    height: 40vmin;
+    width: 15vmin;
     border-radius: 20px;
-    max-width: 400px;
-    min-height: 250px;
-    max-height: 450px;
+    min-height: 400px;
+    min-width: 320px;
+    max-height: 700px;
+    max-width: 350px;
 }
 
-@media only screen and (max-width: 1100px) {
+.register-dark {
+    color: #d4cdc3;
+}
+
+.container-dark {
+    background-color: #30292f;
+}
+
+.form-dark {
+    background-color: #3e885b;
+}
+
+@media only screen and (max-width: 1050px) { 
     .login-logo {
-        height: 500px;
+        height: 350px;
+        width: 350px;
+        margin: 50px 150px 50px 0;
     }
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 870px) {
     .login-grid {
         display: grid;
         grid: 16vh 16vh 16vh 8vh 8vh 16vh/ 1fr 1fr 1fr;

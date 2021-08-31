@@ -25,6 +25,23 @@ export const navHamburgerCSS = makeStyles((theme) => ({
     linkBar: {
         color: '#f8f7ff',
         marginRight: 20,
+    },
+    buttonDark: {
+        backgroundColor: '#3e885b',
+        margin: '2px',
+        '&:hover': {
+            backgroundColor: '#498467',
+            color: '#d4cdc3'
+        },
+    },
+    linkDark: {
+        color: '#3e885b',
+        textDecoration: 'none',
+    },
+    linkBarDark: {
+        color: '#d4cdc3',
+        marginRight: 20,
+        width: 50,
     }
 }));
 
@@ -32,7 +49,7 @@ export default function NavHamburger(props) {
     const thingy = useRef(null);
     const [anchorEl, setAnchorEl] = useState(null);
     const [ links, setLinks ] = useState([])
-    const  { handleLogout, currentUser } = props; 
+    const  { handleLogout, currentUser, darkMode } = props; 
 
     const open = Boolean(anchorEl);
 
@@ -43,27 +60,27 @@ export default function NavHamburger(props) {
         if(currentUser) {
             const options = [
                 <div>Welcome, {currentUser.username}!</div>,
-                <Link to="/" className={classes.link}>Home</Link>,
-                <Link to="/locations" className={classes.link}>Locations</Link>,
-                <Link to="/about" className={classes.link}>About</Link>,
-                <Link to="/contact" className={classes.link}>Contact Us</Link>,
-                <Button variant="contained" color="primary" className={classes.button} onClick={handleLogout}>Logout</Button>
+                <Link to="/" className={(darkMode === true) ? classes.linkDark: classes.link}>Home</Link>,
+                <Link to="/locations" className={(darkMode === true) ? classes.linkDark: classes.link}>Locations</Link>,
+                <Link to="/about" className={(darkMode === true) ? classes.linkDark: classes.link}>About</Link>,
+                <Link to="/contact" className={(darkMode === true) ? classes.linkDark: classes.link}>Contact Us</Link>,
+                <Button variant="contained" color="primary" className={(darkMode === true) ? classes.buttonDark : classes.button} onClick={handleLogout}>Logout</Button>
             ];
             setLinks(options);
         } else {
             const options = [
                 <div>Welcome!</div>,
-                <Link to="/" className={classes.link}>Home</Link>,
-                <Link to="/login" className={classes.link}>Login/Register</Link>,
-                <Link to="/locations" className={classes.link}>Locations</Link>,
-                <Link to="/about" className={classes.link}>About</Link>,
-                <Link to="/contact" className={classes.link}>Contact Us</Link>,
+                <Link to="/" className={(darkMode === true) ? classes.linkDark: classes.link}>Home</Link>,
+                <Link to="/login" className={(darkMode === true) ? classes.linkDark: classes.link}>Login/Register</Link>,
+                <Link to="/locations" className={(darkMode === true) ? classes.linkDark: classes.link}>Locations</Link>,
+                <Link to="/about" className={(darkMode === true) ? classes.linkDark: classes.link}>About</Link>,
+                <Link to="/contact" className={(darkMode === true) ? classes.linkDark: classes.link}>Contact Us</Link>,
             ];
             setLinks(options);
         }
     }
     filterForUser()
-},[currentUser, handleLogout, classes.button, classes.link])
+},[currentUser, handleLogout, darkMode])
 
     const handleClick = () => {
         setAnchorEl(thingy.current);
@@ -74,7 +91,7 @@ export default function NavHamburger(props) {
     };
 
     return (
-        <div className={classes.linkBar}>
+        <div className={(darkMode === true) ? classes.linkBarDark : classes.linkBar}>
             <MenuIcon
                 aria-label="more"
                 aria-controls="fade-menu"
@@ -91,13 +108,14 @@ export default function NavHamburger(props) {
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Fade}
+                className={(darkMode === true) ? classes.menuDark : classes.menu}
                 PaperProps={{
-                style: {
+                    style: {
                     maxHeight: 450,
                     width: '15vw',
                     minWidth: 250,
-                    backgroundColor: '#f8f7ff',
-                    color: '#1d7dc2',
+                    backgroundColor: (darkMode === true) ? '#02111B':'#f8f7ff',
+                    color: (darkMode === true) ? '#3e885b':'#1d7dc2',
                 },}}
                 >
                 {links?.map((option, index) => (

@@ -16,21 +16,22 @@ const navHamburgerCSS = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
-    link: {
-        color: '#1d7dc2',
-        textDecoration: 'none',
+    buttonDark: {
+    backgroundColor: '#3f4045',
+    margin: '2px',
+    '&:hover': {
+        backgroundColor: '#30292f',
+        color: '#d4cdc3'
     },
-    linkBar: {
-        color: '#f8f7ff',
-        marginRight: 20,
     }
 }));
 
-export default function Login( {handleLogin} ) {
+export default function Login(props) {
     const [ formData, setFormData ] = useState({
         username: '',
         password: ''
     })
+    const { handleLogin, darkMode } = props;
     const { username, password } = formData;
     const classes = navHamburgerCSS();
 
@@ -41,21 +42,21 @@ export default function Login( {handleLogin} ) {
             [name]: value
         }))
     }
-
+    // {(darkMode === true) ? "dark-" : 
     return (
         <div className="login-grid">
             <div className="login-logo-container">
-                <img src="https://i.imgur.com/dHUKnwu.png" alt="destination hot dog logo" className="login-logo"/>
+                <img src={(darkMode === true) ? "https://i.imgur.com/eyLImzQ.png" : "https://i.imgur.com/xLr5h9x.png"} alt="destination hot dog logo" className="login-logo"/>
             </div>
-            <div className="login-container">
+            <div className={(darkMode === true) ? "login-container container-dark" : "login-container"}>
                 <form 
-                    className="login-form"
+                    className={(darkMode === true) ? "login-form form-dark" : "login-form"}
                     onSubmit={(e) => {
                     e.preventDefault()
                     handleLogin(formData)
                     }}
                 >
-                    <h2 className="login-register">Login</h2>
+                    <h2 className={(darkMode === true) ? "login-register register-dark" : "login-register"}>Login</h2>
                     <br/>
                     <TextField 
                         required 
@@ -81,7 +82,7 @@ export default function Login( {handleLogin} ) {
                                 <Button 
                                     variant="contained" 
                                     color="primary" 
-                                    className={classes.button}
+                                    className={(darkMode === true) ? classes.buttonDark : classes.button}
                                     style={{margin:'5px'}}>
                                     Register
                                 </Button>
@@ -89,7 +90,7 @@ export default function Login( {handleLogin} ) {
                             <Button 
                                 variant="contained" 
                                 color="primary" 
-                                className={classes.button} 
+                                className={(darkMode === true) ? classes.buttonDark : classes.button} 
                                 type="submit"
                             >
                                 Submit

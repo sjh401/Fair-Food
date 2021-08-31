@@ -6,59 +6,63 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles((theme) => ({
-    submit: {
-        width: '16vw',
-        minWidth: '300px',
-        margin: 5,
-        backgroundColor: '#e4b612',
-        color: '#333432',
-        '&:hover': {
-            backgroundColor: '#f8f7ff',
-            color: '#1d7dc2'
-        },
-    },
-    cancel: {
-        width: '16vw',
-        minWidth: '300px',
-        margin: 5,
-        backgroundColor: '#c30c24',
-        color: '#f8f7ff',
-        '&:hover': {
-            backgroundColor: '#e4b612',
-            color: '#333432'
-        },
-    },
-    text: {
-        width: '16vw',
-        minWidth: '300px',
-        textDecoration: 'none',
-        margin: 5,
-        backgroundColor: '#f8f7ff',
-        borderRadius: 5,
-        '& label.Mui-focused': {
-            color: '#c30c24',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#f8f7ff',
-            },
-            '&:hover fieldset': {
-                borderColor: '#1d7dc2',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: '#e4b612',
-            },
-        }
-    },
 
-}));
 export default function CommentEdit(props) {
     const [ formData, setFormData ] = useState({
         message: 'here is the message'
     });
-    const { allComments, updateComment, toggle, setToggle, toEdit } = props;
+    const { allComments, updateComment, toggle, setToggle, toEdit, darkMode } = props;
     const { location_id, food_id} = useParams();
+    
+    const useStyles = makeStyles((theme) => ({
+        submit: {
+            width: '16vw',
+            minWidth: '300px',
+            margin: 5,
+            backgroundColor: (darkMode === true) ? "#d4cdc3" : '#e4b612',
+            color: (darkMode === true) ? "#3e885b" : '#333432',
+            '&:hover': {
+                backgroundColor: (darkMode === true) ? "#30292f" : '#f8f7ff',
+                color: (darkMode === true) ? "#d4cdc3" : '#1d7dc2'
+            },
+        },
+        cancel: {
+            width: '16vw',
+            minWidth: '300px',
+            margin: 5,
+            backgroundColor: (darkMode === true) ? "#30292f" : '#c30c24',
+            color: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+            '&:hover': {
+                backgroundColor: (darkMode === true) ? "#d4cdc3" : '#e4b612',
+                color: (darkMode === true) ? "#30292f" : '#333432'
+            },
+        },
+        text: {
+            width: '16vw',
+            minWidth: '300px',
+            textDecoration: 'none',
+            margin: 5,
+            borderRadius: 5,
+            backgroundColor: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+            borderColor: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+            '& label.Mui-focused': {
+                color: (darkMode === true) ? "#d4cdc3" : '#e4b612',
+            },
+            '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                    borderColor: (darkMode === true) ? "#30292f" : '#f8f7ff',
+                },
+                '&:hover fieldset': {
+                    borderColor: (darkMode === true) ? "#30292f" : '#1d7dc2',
+                },
+                '&.Mui-focused fieldset': {
+                    borderColor: (darkMode === true) ? "#30292f" : '#e4b612',
+                },
+            }
+        },
+    
+    }));
+
     const classes = useStyles();
 
     useEffect(() => {
@@ -84,10 +88,10 @@ export default function CommentEdit(props) {
     return (
         <div 
         style={{display: ((toggle === false) ? 'none' : 'flex')}}
-        className="food-detail-comment-edit" 
+        className={(darkMode === true) ? "dark-food-detail-comment-edit food-detail-comment-edit" : "food-detail-comment-edit"}
         >
             <form
-            className="food-detail-comment-edit-form"
+            className={(darkMode === true) ? "dark-food-detail-comment-edit-form food-detail-comment-edit-form" : "food-detail-comment-edit-form"}
                 onSubmit={(e) => {
                 e.preventDefault();
                 updateComment(location_id, food_id, toEdit, formData)

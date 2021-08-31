@@ -43,9 +43,35 @@ footer {
     color: #f8f7ff
 }
 
+.header-dark {
+    background-color: #30292f;
+    color: #d4cdc3;
+}
+.main-dark {
+    background-color: #3f4045;
+    color: #d4cdc3;
+}
+.footer-dark {
+    background-color: #30292f;
+    color: #d4cdc3;
+}
+.title-dark {
+    color: #d4cdc3;
+}
+.icons-dark {
+    color: #d4cdc3;
+}
+
+@media only screen and (max-width: 850px) {
+    .project-title {
+        font-size: x-large;
+    }
+}
 /* color palette
 saffron - #e4b612
 jet - #333432
 star command blue - #1d7dc2
 ghost white - #f8f7ff
 firebrick - #c30c24 */
+
+
