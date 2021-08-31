@@ -16,12 +16,14 @@ const navHamburgerCSS = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
+    buttonDark: {
     backgroundColor: '#3f4045',
     margin: '2px',
     '&:hover': {
         backgroundColor: '#30292f',
         color: '#d4cdc3'
     },
+    }
 }));
 
 export default function Login(props) {
@@ -40,7 +42,7 @@ export default function Login(props) {
             [name]: value
         }))
     }
-
+    // {(darkMode === true) ? "dark-" : 
     return (
         <div className="login-grid">
             <div className="login-logo-container">

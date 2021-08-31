@@ -12,7 +12,8 @@ import Rating from '@material-ui/lab/Rating';
 const useStyles = makeStyles((theme) => ({
     submit: {
         width: '16vw',
-        minWidth: '300px',
+        minWidth: 50,
+        maxWidth: 100,
         margin: 5,
         backgroundColor: '#1d7dc2',
         color: '#f8f7ff',
@@ -23,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
     },
     cancel: {
         width: '16vw',
-        minWidth: '300px',
+        minWidth: 50,
+        maxWidth: 100,
         backgroundColor: '#c30c24',
         color: '#f8f7ff',
         '&:hover': {
@@ -32,34 +34,46 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     text: {
+        width: '16vmin',
+        minWidth: 300,
+        borderRadius: 5,
+        textDecoration: 'none',
+        margin: 5,
+    },
+    submitDark: {
         width: '16vw',
-        minWidth: '300px',
+        minWidth: 50,
+        maxWidth: 100,
+        margin: 5,
+        backgroundColor: '#3e885b',
+        color: '#d4cdc3',
+        '&:hover': {
+            backgroundColor: '#d4cdc3',
+            color: '#3e885b'
+        },
+    },
+    cancelDark: {
+        width: '16vw',
+        minWidth: 50,
+        maxWidth: 100,
+        backgroundColor: '#d4cdc3',
+        color: '#30292f',
+        '&:hover': {
+            backgroundColor: '#3e885b',
+            color: '#d4cdc3'
+        },
+    },
+    textDark: {
+        backgroundColor: '#d4cdc3',
+        color: '#30292f',
+        width: '16vmin',
+        borderRadius: 5,
+        minWidth: 300,
         textDecoration: 'none',
         margin: 5,
     },
 
 }));
-
-const StyledRating = withStyles({
-    root: {
-        display: 'flex',
-        margin: 5,
-        width: '16vw',
-        minWidth: '300px',
-        fontSize: 50,
-        justifyContent: 'center',
-    },
-    iconFilled: {
-        color: '#e4b612',
-        width: 50,
-        height: 50,
-    },
-    iconHover: {
-        color: '#1d7dc2',
-        width: 60,
-        height: 60,
-    },
-})(Rating);
 
 export default function FoodCreate(props) {
     const [ formData, setFormData ] = useState({
@@ -71,10 +85,30 @@ export default function FoodCreate(props) {
         rating: ''
     })
     const { name, cuisine, description, food_stall, img_url, rating } = formData;
-    const { createFood } = props;
+    const { createFood,darkMode } = props;
     const { location_id } = useParams();
 
     const [open, setOpen] = useState(false);
+
+    const StyledRating = withStyles({
+        root: {
+            display: 'flex',
+            margin: '2px 15px',
+            width: 270,
+            fontSize: 50,
+            justifyContent: 'center',
+        },
+        iconFilled: {
+            color: (darkMode === true) ? '#3e885b' : '#e4b612',
+            width: 50,
+            height: 50,
+        },
+        iconHover: {
+            color: (darkMode === true) ? '#3f4045' : '#1d7dc2',
+            width: 50,
+            height: 50,
+        },
+    })(Rating);
 
     const classes = useStyles();
 
@@ -97,23 +131,23 @@ export default function FoodCreate(props) {
         const { name, value } = e.target;
         setFormData(prevFormData => ({
             ...prevFormData,
-            [name]: (value*2)
+            [name]: (value)*2
         }))
     }
-
+    console.log(darkMode)
     return (
         <div className="food-create">
-            <div className="food-create-container">
+            <div className={(darkMode === true) ? "dark-food-create-container food-create-container" : "food-create-container"}>
                 <form 
-                    className="food-create-form"
+                    className={(darkMode === true) ? "dark-food-create-form food-create-form" : "food-create-form"}
                     onSubmit={(e) => {
                     e.preventDefault()
                     createFood(location_id, formData)
                     }}
                     >
-                    <div className="food-create-title">Add a Food Item</div>
+                    <div className={(darkMode === true) ? "dark-food-create-title food-create-title" : "food-create-title"}>Add a Food Item</div>
                     <TextField 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         required 
                         id="outlined-basic" 
                         label="Food Name" 
@@ -128,7 +162,7 @@ export default function FoodCreate(props) {
                         onChange={(e) => changeRating(e)}
                     />
                     <Select
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
                         open={open}
@@ -150,7 +184,7 @@ export default function FoodCreate(props) {
                     </Select>
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Where to find it?" 
                         name="food_stall"
@@ -159,7 +193,7 @@ export default function FoodCreate(props) {
                         onChange={handleChange} />
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Food Description" 
                         name="description"
@@ -168,21 +202,23 @@ export default function FoodCreate(props) {
                         onChange={handleChange} />
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Image" 
                         name="img_url"
                         variant="outlined"
                         value={img_url}
                         onChange={handleChange} />
-                    <Button type="submit" variant="contained" className={classes.submit}>
-                            Create
-                    </Button>
-                    <Link to={`/locations/${location_id}`} className={classes.text}>
-                        <Button type="submit" variant="contained" className={classes.cancel}>
-                                Cancel
+                    <div>
+                        <Button type="submit" variant="contained" className={(darkMode === true) ? classes.submitDark : classes.submit}>
+                                Create
                         </Button>
-                    </Link>
+                        <Link to={`/locations/${location_id}`} className={(darkMode === true) ? classes.textDark : classes.text}>
+                            <Button type="submit" variant="contained" className={(darkMode === true) ? classes.cancelDark : classes.cancel}>
+                                    Cancel
+                            </Button>
+                        </Link>
+                    </div>
                 </form>
             </div>
         </div>

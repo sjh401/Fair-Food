@@ -39,8 +39,9 @@ export const navHamburgerCSS = makeStyles((theme) => ({
         textDecoration: 'none',
     },
     linkBarDark: {
-        color: '#02111b',
+        color: '#d4cdc3',
         marginRight: 20,
+        width: 50,
     }
 }));
 

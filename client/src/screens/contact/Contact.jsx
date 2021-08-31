@@ -9,37 +9,41 @@ import Select from '@material-ui/core/Select';
 
 import '../home/Home.css'
 
-const useStyles = makeStyles((theme) => ({
-    button: {
-        backgroundColor: '#1d7dc2',
-        width: '16vw',
-        maxHeight: 60,
-        maxWidth: 300,
-        minWidth: 200,
-        '&:hover': {
-            backgroundColor: '#f8f7ff',
-            color: '#1d7dc2'
-        },
-    },
-    text: {
-        width: '16vw',
-        maxHeight: 60,
-        maxWidth: 300,
-        minWidth: 200,
-    }
-}));
-
-export default function Contact() {
+export default function Contact(props) {
     const [ formData, setFormData ] = useState({
         name: '',
         email: '',
         message: '',
         category: ''
     })
+    const { darkMode } = props;
     const { name, email, message, category } = formData;
     const [open, setOpen] = useState(false);
-    const classes = useStyles();
     const history = useHistory();
+
+    const useStyles = makeStyles((theme) => ({
+        button: {
+            backgroundColor: (darkMode === true) ? "#3e885b" : '#1d7dc2',
+            color: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+            width: '16vw',
+            maxHeight: 60,
+            maxWidth: 300,
+            minWidth: 200,
+            '&:hover': {
+                backgroundColor: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+                color: (darkMode === true) ? "#3e885b" : '#1d7dc2'
+            },
+        },
+        text: {
+            backgroundColor: (darkMode === true) ? "#3e885b" : '#f8f7ff',
+            width: '16vw',
+            maxHeight: 60,
+            maxWidth: 300,
+            minWidth: 200,
+        }
+    }));
+
+    const classes = useStyles();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -57,15 +61,15 @@ export default function Contact() {
     };
 
     return (
-    <div className="contact-create-container">
+    <div className={(darkMode === true) ? "dark-contact-create-container contact-create-container" : "contact-create-container"}>
         <form 
-            className="contact-create-form"
+            className={(darkMode === true) ? "dark-contact-create-form contact-create-form" : "contact-create-form"}
             onSubmit={(e) => {
             e.preventDefault()
             history.push('/')
             }}
             >
-                <div className="contact-create-title">Contact Us</div>
+                <div className={(darkMode === true) ? "dark-contact-create-title contact-create-title" : "contact-create-title"}>Contact Us</div>
                 <TextField 
                     className={classes.text}
                     required 
@@ -107,7 +111,6 @@ export default function Contact() {
                 name="category"
                 value={category}
                 onChange={handleChange}
-                // style={{color:'#f8f7ff'}}
                 >
                 <MenuItem id="">
                     <em>Category</em>

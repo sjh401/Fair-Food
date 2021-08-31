@@ -11,6 +11,7 @@ import FoodCard from '../../components/card/FoodCard';
 import './Location.css'
 
 const useStyles = makeStyles((theme) => ({
+
     button: {
         backgroundColor: '#1d7dc2',
         '&:hover': {
@@ -18,10 +19,26 @@ const useStyles = makeStyles((theme) => ({
             color: '#1d7dc2'
         },
     },
+    buttonDark: {
+        backgroundColor: '#3e885b',
+        color: '#d4cdc3',
+        margin: '2px',
+        '&:hover': {
+            backgroundColor: '#d4cdc3',
+            color: '#3f4045'
+        },
+    },
+    formControlDark: {
+        color: '#d4cdc3',
+        '& .MuiSelect-icon': {
+            color: '#d4cdc3',
+        },
+    },
+
 }));
 
 export default function LocationDetail(props) {
-    const { allLocations, allFoods, currentUser } = props;
+    const { allLocations, allFoods, currentUser, darkMode } = props;
     const { location_id } = useParams();
     const [ location, setLocation ] = useState([]);
     const [ foods, setFoods ] = useState([]);
@@ -69,7 +86,7 @@ export default function LocationDetail(props) {
             </div>
             <div className="location-detail-foods">
                 <div>
-                    <FormControl className={classes.formControl}>
+                    <FormControl >
                         <Select
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
@@ -78,12 +95,12 @@ export default function LocationDetail(props) {
                         onOpen={handleOpen}
                         value={filter.cuisine}
                         onChange={handleChange}
-                        // style={{color:'#f8f7ff'}}
+                        className={(darkMode === true) ? classes.formControlDark : classes.formControl}
                         >
                         <MenuItem value="All" >
                             <em>Filter by Cuisine</em>
                         </MenuItem>
-                        <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
+                        <MenuItem value={"Appitizer"} >Appitizer</MenuItem>
                         <MenuItem value={"Entree"}>Entree</MenuItem>
                         <MenuItem value={"Dessert"}>Dessert</MenuItem>
                         <MenuItem value={"Snack"}>Snack</MenuItem>
@@ -92,7 +109,7 @@ export default function LocationDetail(props) {
                         </Select>
                     </FormControl>
                 </div>
-                <div className="location-detail-food-cards">
+                <div className={(darkMode === true) ? "dark-location-detail-food-cards location-detail-food-cards" : "location-detail-food-cards"}>
                     {filterFoods.map(food => (
                         <React.Fragment key={food.id}>
                             <FoodCard
@@ -103,22 +120,23 @@ export default function LocationDetail(props) {
                                 currentUser={currentUser}
                                 location_id={location_id}
                                 food_id={food.id}
+                                darkMode={darkMode}
                             />
                         </React.Fragment>
                     ))}
                 </div>
             </div>
-            <div className="location-detail-description">
+            <div className={(darkMode === true) ? "dark-location-detail-description location-detail-description" : "location-detail-description"}>
                 {currentUser &&
                     <div>
                         <Link to={`/locations/${location_id}/foods/new`} className="locations-container-link">
-                        <Button variant="contained" color="primary" className={classes.button}>
+                        <Button variant="contained" color="primary" className={(darkMode === true) ? classes.buttonDark : classes.button}>
                             Create New Food
                         </Button>
                         </Link>
                     </div>
                 }
-                <div className="location-detail-description-card">
+                <div className={(darkMode === true) ? "dark-location-detail-description-card location-detail-description-card" : "location-detail-description-card"}>
                     <div>
                         {location?.description}
                     </div>

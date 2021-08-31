@@ -15,7 +15,8 @@ export default function FoodDetail(props) {
         allUsers, 
         createComment,
         updateComment,
-        removeComment
+        removeComment,
+        darkMode
     } = props;
 
     const { location_id, food_id } = useParams();
@@ -48,8 +49,9 @@ export default function FoodDetail(props) {
                         food_id={food_id}
                         currentUser={currentUser}
                         user_id={food?.user_id}
+                        darkMode={darkMode}
                     />
-                <div className="food-detail-comments">
+                <div className={(darkMode === true) ? "dark-food-detail-comments food-detail-comments" : "food-detail-comments"}>
                     <CommentCard
                         currentUser={currentUser}
                         allUsers={allUsers}
@@ -61,6 +63,7 @@ export default function FoodDetail(props) {
                         food={food}
                         location_id={location_id}
                         food_id={food_id}
+                        darkMode={darkMode}
                     />
                 </div>
             </div>

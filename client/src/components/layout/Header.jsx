@@ -35,7 +35,6 @@ const Header = React.forwardRef((props, dark) => {
         <header className={(darkMode === true) ? "header-dark": "header"}>
             <CustomSwitch 
                 onChange={handleChange}
-                ref={dark}
             />
             <h1 className={(darkMode === true) ? "project-title title-dark" : "project-title"}>Destination Hot Dog</h1>
             <NavHamburger 

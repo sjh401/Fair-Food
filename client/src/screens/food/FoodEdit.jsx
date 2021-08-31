@@ -38,29 +38,41 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none',
         margin: 5,
     },
+    submitDark: {
+        width: '16vw',
+        minWidth: 50,
+        maxWidth: 100,
+        margin: 5,
+        backgroundColor: '#3e885b',
+        color: '#d4cdc3',
+        '&:hover': {
+            backgroundColor: '#d4cdc3',
+            color: '#3e885b'
+        },
+    },
+    cancelDark: {
+        width: '16vw',
+        minWidth: 50,
+        maxWidth: 100,
+        backgroundColor: '#d4cdc3',
+        color: '#30292f',
+        '&:hover': {
+            backgroundColor: '#3e885b',
+            color: '#d4cdc3'
+        },
+    },
+    textDark: {
+        backgroundColor: '#d4cdc3',
+        color: '#30292f',
+        width: '16vmin',
+        borderRadius: 5,
+        minWidth: 300,
+        textDecoration: 'none',
+        margin: 5,
+    },
 
 }));
 
-const StyledRating = withStyles({
-    root: {
-        display: 'flex',
-        margin: 5,
-        width: '16vw',
-        minWidth: '300px',
-        fontSize: 50,
-        justifyContent: 'center',
-    },
-    iconFilled: {
-        color: '#e4b612',
-        width: 50,
-        height: 50,
-    },
-    iconHover: {
-        color: '#1d7dc2',
-        width: 60,
-        height: 60,
-    },
-})(Rating);
 export default function FoodEdit(props) {
     const [ formData, setFormData ] = useState({
         name: '',
@@ -71,10 +83,30 @@ export default function FoodEdit(props) {
         rating: ''
     })
     const { name, cuisine, description, food_stall, img_url, rating } = formData;
-    const { allFoods, updateFood } = props;
+    const { allFoods, updateFood, darkMode } = props;
     const { location_id, food_id } = useParams();
     const [ food, setFood ] = useState([]);
     const [open, setOpen] = useState(false);
+
+    const StyledRating = withStyles({
+        root: {
+            display: 'flex',
+            margin: '2px 15px',
+            width: 270,
+            fontSize: 50,
+            justifyContent: 'center',
+        },
+        iconFilled: {
+            color: (darkMode === true) ? '#3e885b' : '#e4b612',
+            width: 50,
+            height: 50,
+        },
+        iconHover: {
+            color: (darkMode === true) ? '#3f4045' : '#1d7dc2',
+            width: 50,
+            height: 50,
+        },
+    })(Rating);
 
     const classes = useStyles();
 
@@ -127,17 +159,17 @@ export default function FoodEdit(props) {
 
     return (        
         <div className="food-create">
-            <div className="food-create-container">
+            <div className={(darkMode === true) ? "dark-food-create-container food-create-container" : "food-create-container"}>
                 <form 
-                    className="food-create-form"
+                    className={(darkMode === true) ? "dark-food-create-form food-create-form" : "food-create-form"}
                     onSubmit={(e) => {
                     e.preventDefault()
                     updateFood(location_id, food_id, formData)
                     }}
                     >
-                    <div className="food-create-title">Add a Food Item</div>
+                    <div className={(darkMode === true) ? "dark-food-create-title food-create-title" : "food-create-title"}>Add a Food Item</div>
                     <TextField 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         required 
                         id="outlined-basic" 
                         label="Food Name" 
@@ -152,7 +184,7 @@ export default function FoodEdit(props) {
                         onChange={changeRating}
                     />
                     <Select
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
                         open={open}
@@ -172,7 +204,7 @@ export default function FoodEdit(props) {
                     </Select>
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Where to find it?" 
                         name="food_stall"
@@ -181,7 +213,7 @@ export default function FoodEdit(props) {
                         onChange={handleChange} />
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Food Description" 
                         name="description"
@@ -190,21 +222,23 @@ export default function FoodEdit(props) {
                         onChange={handleChange} />
                     <TextField 
                         required 
-                        className={classes.text}
+                        className={(darkMode === true) ? classes.textDark : classes.text}
                         id="outlined-basic" 
                         label="Image" 
                         name="img_url"
                         variant="outlined"
                         value={img_url}
                         onChange={handleChange} />
-                    <Button type="submit" variant="contained" className={classes.submit}>
-                            Update
-                    </Button>
-                    <Link to={`/locations/${location_id}/foods/${food_id}`} className={classes.text}>
-                        <Button type="submit" variant="contained" className={classes.cancel}>
-                                Cancel
+                    <div>
+                        <Button type="submit" variant="contained" className={(darkMode === true) ? classes.submitDark : classes.submit}>
+                                Update
                         </Button>
-                    </Link>
+                        <Link to={`/locations/${location_id}/foods/${food_id}`} className={(darkMode === true) ? classes.textDark : classes.text}>
+                                <Button type="submit" variant="contained" className={(darkMode === true) ? classes.cancelDark : classes.cancel}>
+                                        Cancel
+                            </Button>
+                        </Link>
+                    </div>
                 </form>
             </div>
         </div>

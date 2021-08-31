@@ -4,11 +4,13 @@
 }
 
 .locations {
+    display: grid;
     height: 80vh;
     width: 100vw;
-    display: flex;
+    min-height: 600px;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 
@@ -18,9 +20,11 @@
     justify-content: center;
     align-items: center;
     background-color: #c30c24;
-    height: 70vh;
-    width: 85vw;
+    height: 70vmin;
+    width: 100vmin;
     min-height: 500px;
+    min-width: 350px;
+    margin: 50px;
     border-radius: 20px;
     overflow: auto;
 }
@@ -53,6 +57,7 @@
 .location-detail-description {
     grid-area: 2/3/3/4;
 }
+
 .location-detail-description-card {
     display: flex;
     flex-flow: row wrap;
@@ -79,6 +84,23 @@
 
 .created {
     background-color: #1d7dc2;
+}
+
+.dark-locations-container-link {
+    color: #d4cdc3;
+}
+
+.dark-locations-containter {
+    background-color: #3e885b;
+}
+
+.dark-location-detail-food-cards {
+    background-color: #3e885b;
+}
+
+.dark-location-detail-description-card {
+    background-color: #30292f;
+    color: #3e885b;
 }
 
 @media only screen and (max-width: 850px) {

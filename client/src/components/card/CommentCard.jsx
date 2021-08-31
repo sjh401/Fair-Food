@@ -5,44 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { TextField } from '@material-ui/core';
 
-
-export const commentCardCSS = makeStyles((theme) => ({
-    button: {
-        backgroundColor: '#1d7dc2',
-        color: '#f8f7ff',
-        width: 50,
-        height: 20,
-        margin: 2,
-        '&:hover': {
-            backgroundColor: '#f8f7ff',
-            color: '#1d7dc2'
-        },
-    },
-    text: {
-        width: '25vw',
-        margin: 7,
-        minWidth: 300,
-        height: 'auto',
-        backgroundColor: '#f8f7ff',
-        borderRadius: 5,
-        borderColor: '#1d7dc2',
-        '& label.Mui-focused': {
-            color: '#e4b612',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#f8f7ff',
-            },
-            '&:hover fieldset': {
-                borderColor: '#1d7dc2',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: '#e4b612',
-            },
-        }
-    },
-}));
-
 export default function CommentCard(props) {
     const [ toEdit, setToEdit ] = useState([]);
     const [ toggle, setToggle ] = useState(false);
@@ -59,8 +21,47 @@ export default function CommentCard(props) {
         comments,
         food,
         location_id,
-        food_id
+        food_id,
+        darkMode
     } = props;
+
+    const commentCardCSS = makeStyles((theme) => ({
+        button: {
+            backgroundColor: (darkMode === true) ? "#3e885b" : '#1d7dc2',
+            color: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+            width: 50,
+            height: 20,
+            margin: 2,
+            '&:hover': {
+                backgroundColor: (darkMode === true) ? "#d4cdc3" : '#f8f7ff',
+                color: (darkMode === true) ? "#3e885b" : '#1d7dc2'
+            },
+        },
+        text: {
+            width: '25vw',
+            margin: 7,
+            minWidth: 300,
+            maxWidth: 400,
+            height: 'auto',
+            backgroundColor: (darkMode === true) ? "#3e885b" : '#f8f7ff',
+            borderRadius: 5,
+            borderColor: (darkMode === true) ? "#3e885b" : '#1d7dc2',
+            '& label.Mui-focused': {
+                color: (darkMode === true) ? "#d4cdc3" : '#e4b612',
+            },
+            '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                    borderColor: (darkMode === true) ? "#3e885b" : '#f8f7ff',
+                },
+                '&:hover fieldset': {
+                    borderColor: (darkMode === true) ? "#3e885b" : '#1d7dc2',
+                },
+                '&.Mui-focused fieldset': {
+                    borderColor: (darkMode === true) ? "#3e885b" : '#e4b612',
+                },
+            }
+        },
+    }));
 
     const classes = commentCardCSS();
 
@@ -90,10 +91,11 @@ export default function CommentCard(props) {
                 toEdit={toEdit}
                 toggle={toggle}
                 setToggle={setToggle}
+                darkMode={darkMode}
             />
             {currentUser && 
                 <div 
-                    className="food-detail-create-comment" 
+                    className={(darkMode === true) ? "dark-food-detail-create-comment food-detail-create-comment" : "food-detail-create-comment" }
                     style={{display: ((toggle === false) ? 'flex' : 'none')}}
                 >
                     <form onSubmit={(e) => {
@@ -121,7 +123,7 @@ export default function CommentCard(props) {
                 </div>
             }
             <div 
-                className="comment-card-container"
+                className={(darkMode === true) ? "dark-comment-card-container comment-card-container" : "comment-card-container"}
                 style={{display: ((toggle === false) ? 'flex' : 'none')}}
             >
                 {comments?.map(comment => (
@@ -152,7 +154,7 @@ export default function CommentCard(props) {
                             </div>
                             }
                         </div>
-                        <div className="comment-message">
+                        <div className={(darkMode === true) ? "dark-comment-message comment-message" : "comment-message"}>
                             {comment.message}
                         </div>
                     </div>))}

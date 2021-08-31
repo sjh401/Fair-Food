@@ -61,6 +61,12 @@ footer {
 .icons-dark {
     color: #d4cdc3;
 }
+
+@media only screen and (max-width: 850px) {
+    .project-title {
+        font-size: x-large;
+    }
+}
 /* color palette
 saffron - #e4b612
 jet - #333432

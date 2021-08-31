@@ -7,7 +7,7 @@ export default function Home(props) {
     const [ sorted, setSorted ] = useState([])
     const [ ten, setTen ] = useState([]);
 
-    const { allFoods } = props;
+    const { allFoods, darkMode } = props;
 
     useEffect(() => {
         const limited = getTenIndecies(sorted)
@@ -22,9 +22,9 @@ export default function Home(props) {
     return (
         <div className="home-detail-grid">
             <div className="home-details">
-                <img src="https://i.imgur.com/dHUKnwu.png" alt="destination hot dog logo" className="home-logo"/>
+                <img src={(darkMode === true) ? "https://i.imgur.com/eyLImzQ.png" : "https://i.imgur.com/xLr5h9x.png"} alt="destination hot dog logo" className="home-logo"/>
             </div>
-            <div className="home-foods-container">
+            <div className={(darkMode === true) ? "dark-home-foods-container home-foods-container" : "home-foods-container"}>
                 {ten?.map(food => {
                         return (
                         <FoodCard
@@ -34,6 +34,7 @@ export default function Home(props) {
                             location_id={food.location_id}
                             img_url={food.img_url}
                             food_id={food.id}
+                            darkMode={darkMode}
                         />
                 )})}
             </div>

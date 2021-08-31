@@ -21,11 +21,12 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
+    justify-self: center;
     align-items: center;
     background-color: #c30c24;
     height: 70vmin;
     width: 45vmin;
-    min-width: 350px;
+    min-width: 500px;
     margin: 50px;
     border-radius: 20px;
     overflow-y: auto;
@@ -38,9 +39,9 @@
 }
 .food-create {
     display: flex;
-    height: 80vh;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 .food-create-container {
     display: flex;
@@ -49,15 +50,16 @@
     align-self: center;
     align-content: center;
     justify-items: center;
-    height: 70vh;
-    width: 30vw;
-    min-height: 700px;
+    height: 70vmin;
+    width: 30vmin;
+    min-height: 550px;
     min-width: 360px;
     max-height: 800px;
     max-width: 400px;
     background-color: #c30c24;
     color: #f8f7ff;
     border-radius: 20px;
+    margin: 50px;
 }
 
 .food-create-title {
@@ -70,9 +72,9 @@
     flex-flow: column wrap;
     justify-content: center;
     align-content: center;
-    height: 60vh;
-    width: 20vw;
-    min-height: 600px;
+    height: 60vmin;
+    width: 20vmin;
+    min-height: 500px;
     min-width: 320px;
     max-height: 700px;
     max-width: 350px;
@@ -86,6 +88,24 @@
     text-decoration: none;
 }
 
+.dark-food-create-container {
+    background-color: #3e885b;
+    color: #d4cdc3;
+}
+
+.dark-food-create-title {
+    color:#3e885b;
+}
+.dark-food-create-form {
+    background-color: #30292f;
+    color: #3e885b;
+}
+.dark-food-detail-comments {
+    background-color: #30292f;
+}
+.dark-food-detail-create-comment {
+    color: #3e885b;
+}
 @media only screen and (max-width: 850px) {
     .food-detail-grid {
         display: grid;
