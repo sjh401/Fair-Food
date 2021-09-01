@@ -58,7 +58,6 @@ The **Destination Hot Dog** MVP will have a RESTful backend with three mutable t
 | JWT | Token Based Authentication |
 | Bcrypt | Password Security |
 | Faker | Seeding Database |
-| React Star Ratings | Star Rating for Food |
 
 <br>
 
@@ -102,34 +101,34 @@ src
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Repo/Branch Setup & Gem Installs | H | 2hrs | 0.5hrs | |
-| Schema & Seed File Creation & Testing (CT) | H | 2hrs | | |
-| Models & Routes CT | H | 2hrs | | |
-| Controllers CT | H | 3hrs | | |
-| Models Construction CT | H | 1hr | | |
-| Full CRUD Databse Testing | H | 2hrs | | |
-| React Initialization | H | 1hr | | |
-| Services Files | H | 3hrs | | |
-| User Tests | H | 2hrs | | |
-| Layout Components & Landing Screen | H | 2hrs | | |
-| Container Setup | H | 3hrs | | |
-| Login & Register CT | H | 2hrs | | |
-| User Authentication CT | H | 2hrs | | |
-| Locations & Details CT | H | 2hrs | | |
-| Food Create & Edit CT | H | 2hrs | | |
-| Food & Details CT | H | 2hrs | | |
-| Comments CT | H | 2hrs | | |
-| React App Cleanup | M | 2hrs | | |
-| Deploying to Heroku | H | 2hrs | | |
-| Netlify Deploy | H | 2hrs | | |
-| Clickalbe Model | H | 2hrs | | |
-| CSS Layout | H | 3hrs | | |
-| CSS Screens | H | 3hrs | | |
-| CSS Components | H | 3hrs | | |
-| Media-Query Screens | H | 2hrs | | |
-| Media-Query Layout | H | 2hrs | | |
-| Clickalbe Walk-Through | H | 2hrs | | |
-| Presentation Prep | H | 2hrs | | |
-| Total | | 60hrs | | |
+| Schema & Seed File Creation & Testing (CT) | H | 2hrs | 2hrs | |
+| Models & Routes CT | H | 2hrs | 1.5hrs | |
+| Controllers CT | H | 3hrs | 1hr | |
+| Models Construction CT | H | 1hr | 1hr | |
+| Full CRUD Databse Testing | H | 2hrs | 2.5hrs | |
+| React Initialization | H | 1hr | 1.5hrs | |
+| Services Files | H | 3hrs | 2hrs | |
+| User Tests | H | 2hrs | 3hrs | |
+| Layout Components & Landing Screen | H | 2hrs | 2hrs | |
+| Container Setup | H | 3hrs | 2hrs | |
+| Login & Register CT | H | 2hrs | 1.5hrs | |
+| User Authentication CT | H | 2hrs | 1hr | |
+| Locations & Details CT | H | 2hrs | 2.5hrs | |
+| Food Create & Edit CT | H | 2hrs | 2hrs | |
+| Food & Details CT | H | 2hrs | 2hrs | |
+| Comments CT | H | 2hrs | 2.5hrs | |
+| React App Cleanup | M | 2hrs | 2hrs | |
+| Deploying to Heroku | H | 2hrs | 1hr | |
+| Netlify Deploy | H | 2hrs | 1hr | |
+| Clickalbe Model | H | 2hrs | 2hrs | |
+| CSS Layout | H | 3hrs | 2hrs | |
+| CSS Screens | H | 3hrs | 3.5hrs | |
+| CSS Components | H | 3hrs | 2hrs | |
+| Media-Query Screens | H | 2hrs | 2hrs| |
+| Media-Query Layout | H | 2hrs | 1.5hrs| |
+| Clickalbe Walk-Through | H | 2hrs | 1hr | |
+| Presentation Prep | H | 2hrs | 1hr | |
+| Total | | 60hrs | 49.5hrs | |
 
 
 <br>
@@ -157,8 +156,37 @@ src
 
 ## Code Showcase
 
-Can't be proud of anything I haven't finished yet.
+I like how my create/edit food forms turned out, the select and star inputs inparticular.
+``` 
+<StyledRating 
+    name="rating" 
+    precision={0.5} 
+    value={(rating)/2}
+    onChange={(e) => changeRating(e)}
+/>
+<Select
+    className={(darkMode === true) ? classes.textDark : classes.text}
+    labelId="demo-controlled-open-select-label"
+    id="demo-controlled-open-select"
+    open={open}
+    onClose={handleClose}
+    onOpen={handleOpen}
+    name="cuisine"
+    value={cuisine}
+    onChange={handleChange}
+>
+    <MenuItem id="All" >
+        <em>Cuisine</em>
+    </MenuItem>
+    <MenuItem value={"Appitizer"}>Appitizer</MenuItem>
+    <MenuItem value={"Entree"}>Entree</MenuItem>
+    <MenuItem value={"Dessert"}>Dessert</MenuItem>
+    <MenuItem value={"Snack"}>Snack</MenuItem>
+    <MenuItem value={"Beverage"}>Beverage</MenuItem>
+    <MenuItem value={"Alcohol"}>Alcohol</MenuItem>
+</Select>
+```
 
 ## Code Issues & Resolutions
 
-Always have a problem coming up with names...
+Dark mode was a little tricky but I was able to move some of the class css into the function and get it to work with a ternary operator.
