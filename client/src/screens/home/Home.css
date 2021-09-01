@@ -1,3 +1,5 @@
+
+
 .home-detail-grid {
     display: grid;
     grid: 40vh 40vh/ 1fr 1fr 1fr;
@@ -78,6 +80,20 @@
     border-radius: 20px;
 }
 
+.home-images {
+    display: flex;
+    align-self: center;
+    height: 70vmin;
+    width: 70vmin;
+    max-height: 600px;
+    max-width: 600px;
+    min-height: 300px;
+    min-width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    animation: images 110s ease-in-out infinite; 
+}
 
   /* dark mode */
 .dark-home-foods-container {
@@ -113,5 +129,41 @@
     .home-logo {
         height: 350px;
         width: 350px;
+    }
+}
+
+@keyframes images {
+    0%{
+        background-image: url("../../assets/images/breakfast.jpeg")
+    }
+    10%{
+        background-image: url("../../assets/images/cannoli.png")
+    }
+    20%{
+        background-image: url("../../assets/images/fishburger.jpeg")
+    }
+    30%{
+        background-image: url("../../assets/images/grilledcheese.jpeg")
+    }
+    40%{
+        background-image: url("../../assets/images/junk.jpeg")
+    }
+    50%{
+        background-image: url("../../assets/images/pizza.jpeg")
+    }
+    60%{
+        background-image: url("../../assets/images/ratatata.jpeg")
+    }
+    70%{
+        background-image: url("../../assets/images/ribs.jpeg")
+    }
+    80%{
+        background-image: url("../../assets/images/sushi.jpeg")
+    }
+    90%{
+        background-image: url("../../assets/images/tacos.jpeg")
+    }
+    100%{
+        background-image: url("../../assets/images/waffles.jpeg")
     }
 }

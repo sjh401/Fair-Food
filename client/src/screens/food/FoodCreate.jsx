@@ -134,7 +134,7 @@ export default function FoodCreate(props) {
             [name]: (value)*2
         }))
     }
-    console.log(darkMode)
+
     return (
         <div className="food-create">
             <div className={(darkMode === true) ? "dark-food-create-container food-create-container" : "food-create-container"}>

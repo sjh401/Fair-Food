@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import './Card.css'
 
 export default function FoodCard(props) {
-    const { name, cuisine, description, img_url, location_id, food_id, darkMode } = props;
+    const { name, cuisine, img_url, location_id, food_id, darkMode } = props;
     return (
         <div className={(darkMode === true) ? "dark-food-card-container food-card-container" : "food-card-container"}>
             <Link to={`/locations/${location_id}/foods/${food_id}`} className="locations-container-link">

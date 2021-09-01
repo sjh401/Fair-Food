@@ -80,6 +80,7 @@ export default function NavHamburger(props) {
         }
     }
     filterForUser()
+     // eslint-disable-next-line
 },[currentUser, handleLogout, darkMode])
 
     const handleClick = () => {

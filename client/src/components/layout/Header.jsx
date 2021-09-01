@@ -23,7 +23,7 @@ const CustomSwitch = withStyles({
         },
 })(Switch);
 
-const Header = React.forwardRef((props, dark) => {
+export default function Header(props) {
     const { currentUser, handleLogout, darkMode, setDarkMode } = props;
 
     const handleChange = (e) => {
@@ -44,6 +44,4 @@ const Header = React.forwardRef((props, dark) => {
             />
         </header>
     )
-})
-
-export default Header
+}
