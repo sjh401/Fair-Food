@@ -134,36 +134,18 @@
 
 @keyframes images {
     0%{
-        background-image: url("../../assets/images/breakfast.jpeg")
-    }
-    10%{
-        background-image: url("../../assets/images/cannoli.png")
+        background-image: url("../../assets/images/newImages/hello-i-m-nik-QqLsprkkNbM-unsplash.jpg")
     }
     20%{
-        background-image: url("../../assets/images/fishburger.jpeg")
-    }
-    30%{
-        background-image: url("../../assets/images/grilledcheese.jpeg")
+        background-image: url("../../assets/images/newImages/kim-daniels-OrkEasJeY74-unsplash.jpg")
     }
     40%{
-        background-image: url("../../assets/images/junk.jpeg")
-    }
-    50%{
-        background-image: url("../../assets/images/pizza.jpeg")
+        background-image: url("../../assets/images/newImages/leigh-skomal-kn1YORBo2DY-unsplash.jpg")
     }
     60%{
-        background-image: url("../../assets/images/ratatata.jpeg")
-    }
-    70%{
-        background-image: url("../../assets/images/ribs.jpeg")
+        background-image: url("../../assets/images/newImages/mae-mu-en4qp-aK1h4-unsplash.jpg")
     }
     80%{
-        background-image: url("../../assets/images/sushi.jpeg")
-    }
-    90%{
-        background-image: url("../../assets/images/tacos.jpeg")
-    }
-    100%{
-        background-image: url("../../assets/images/waffles.jpeg")
+        background-image: url("../../assets/images/newImages/monika-grabkowska-eAsck4oAguM-unsplash.jpg")
     }
 }
