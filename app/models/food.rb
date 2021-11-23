@@ -2,4 +2,5 @@ class Food < ApplicationRecord
   belongs_to :location
   belongs_to :user
   has_many :comments, dependent: :destroy
+  # validates :rating, 
 end

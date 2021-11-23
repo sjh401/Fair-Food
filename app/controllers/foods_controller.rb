@@ -19,6 +19,7 @@ class FoodsController < ApplicationController
     @location = Location.find(params[:location_id])
     @food = Food.new(food_params)
     @food.user = @current_user
+    
     @food.location = @location
     if @food.save
       render json: @food, status: :created
