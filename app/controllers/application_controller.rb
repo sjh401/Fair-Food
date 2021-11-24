@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     SECRET_KEY = Rails.application.secrets.secret_key_base.to_s
-    # rescue_from Users::NotAuthorized, with: :user_not_authorized
+    rescue_from Users::NotAuthorized, with: :user_not_authorized
 
     def encode(payload, exp = 24.hours.from_now)
         payload[:exp] = exp.to_i
@@ -41,10 +41,10 @@ class ApplicationController < ActionController::API
     # end
 
 
-#   private
-#   def user_not_authorized
-#     flash[:error] = "You don't have access to this section."
-#     redirect_back(fallback_location: root_path)
-#   end
+  private
+  def user_not_authorized
+    flash[:error] = "You don't have access to this section."
+    redirect_back(fallback_location: root_path)
+  end
 
 end
