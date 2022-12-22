@@ -1,4 +1,4 @@
-# fly.toml file generated for destination-hot-dog on 2022-12-21T21:03:32-06:00
+# fly.toml file generated for destination-hot-dog on 2022-12-22T10:16:54-06:00
 
 app = "destination-hot-dog"
 kill_signal = "SIGINT"
@@ -7,7 +7,6 @@ processes = []
 
 [build]
   [build.args]
-    BUILD_COMMAND = "bin/rails fly:build"
     SERVER_COMMAND = "bin/rails fly:server"
 
 [deploy]

@@ -7,33 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# cuisine = [
-#     "Snack",
-#     "Entree",
-#     "Appitizer",
-#     "Dessert",
-#     "Beverage",
-#     "Alcohol"
-# ]
+cuisine = [
+    "Snack",
+    "Entree",
+    "Appitizer",
+    "Dessert",
+    "Beverage",
+    "Alcohol"
+]
 
-# images = [
-#     "https://media.timeout.com/images/105787450/image.jpg",
-#     "https://cdn.choosechicago.com/uploads/2019/06/firsttime-pizza.jpg",
-#     "https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg",
-#     "https://img.traveltriangle.com/blog/wp-content/uploads/2018/12/cover-for-street-food-in-sydney.jpg",
-#     "https://www.washingtonian.com/wp-content/uploads/2021/07/2Fiftys-1500x1000.jpg",
-#     "https://www.westcentralfoodservice.com/wp-content/uploads/2019/04/5-food-trends-2019-no-title.jpg",
-#     "https://img.taste.com.au/x7k1EA4i/taste/2020/05/jun20_crispy-layered-potato-bake-161708-1.jpg",
-#     "https://static.independent.co.uk/2021/07/26/11/food-tacos-b0524fca-ea38-11eb-ba5d-55d3b5ffcaf1.jpg?width=640&auto=webp&quality=75",
-#     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcIKAjXx4dTwVPjwP1ca_SpBKQyDYJR25-dQ&usqp=CAU",
-#     "https://www.bajafresh.com/assets/webp/img/taco-value.webp",
-#     "https://images.theconversation.com/files/399846/original/file-20210510-5469-t4qora.jpg?ixlib=rb-1.1.0&rect=0%2C894%2C5386%2C2693&q=45&auto=format&w=668&h=324&fit=crop",
-#     "https://assets.dmagstatic.com/wp-content/uploads/2019/09/lolos-chicken-and-waffles-horizontal.jpg",
-#     "https://www.2foodtrippers.com/wp-content/uploads/2020/01/Croissant-at-Hugo-_-Victor-in-Paris.jpg",
-#     "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator.com/article/2017/12/06/why-sugar-and-why-so-much-who-investigates-the-food-industry-s-sweet-tooth/7624387-1-eng-GB/Why-sugar-and-why-so-much-WHO-investigates-the-food-industry-s-sweet-tooth_wrbm_large.jpg",
-#     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpE_KlKZyFtqpRMHPCTz0OWsoTUwePoJq95A&usqp=CAU",
-#     "https://localfoodwalkingtours.com/wp-content/uploads/2020/07/salt-lake-city-food-tour-flavors.png"
-# ]
+images = [
+    "https://media.timeout.com/images/105787450/image.jpg",
+    "https://cdn.choosechicago.com/uploads/2019/06/firsttime-pizza.jpg",
+    "https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg",
+    "https://img.traveltriangle.com/blog/wp-content/uploads/2018/12/cover-for-street-food-in-sydney.jpg",
+    "https://www.washingtonian.com/wp-content/uploads/2021/07/2Fiftys-1500x1000.jpg",
+    "https://www.westcentralfoodservice.com/wp-content/uploads/2019/04/5-food-trends-2019-no-title.jpg",
+    "https://img.taste.com.au/x7k1EA4i/taste/2020/05/jun20_crispy-layered-potato-bake-161708-1.jpg",
+    "https://static.independent.co.uk/2021/07/26/11/food-tacos-b0524fca-ea38-11eb-ba5d-55d3b5ffcaf1.jpg?width=640&auto=webp&quality=75",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcIKAjXx4dTwVPjwP1ca_SpBKQyDYJR25-dQ&usqp=CAU",
+    "https://www.bajafresh.com/assets/webp/img/taco-value.webp",
+    "https://images.theconversation.com/files/399846/original/file-20210510-5469-t4qora.jpg?ixlib=rb-1.1.0&rect=0%2C894%2C5386%2C2693&q=45&auto=format&w=668&h=324&fit=crop",
+    "https://assets.dmagstatic.com/wp-content/uploads/2019/09/lolos-chicken-and-waffles-horizontal.jpg",
+    "https://www.2foodtrippers.com/wp-content/uploads/2020/01/Croissant-at-Hugo-_-Victor-in-Paris.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYiNAhQtoeHmOZo0n4kFtXivfsWbQ-eMKR2g&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpE_KlKZyFtqpRMHPCTz0OWsoTUwePoJq95A&usqp=CAU",
+    "https://localfoodwalkingtours.com/wp-content/uploads/2020/07/salt-lake-city-food-tour-flavors.png"
+]
 
 
 # @user1 = User.create!(username: 'nicolas', email: 'angle@police.officer', password: 'Y0urmonkey!')
@@ -53,16 +53,16 @@
 # @location8 = Location.create!(name: 'Universial Studios', city: ' Orlando', img_url: 'https://www.travelingmom.com/wp-content/uploads/2019/04/Universal-Ball.jpg', description: 'Stuff happens here')
 # @location9 = Location.create!(name: 'Wrigley Field', city: 'Chicago', img_url: 'https://lede-admin.blockclubchicago.org/wp-content/uploads/sites/5/2021/03/img2528-1460435271.jpeg', description: 'Stuff happens here')
 
-# # puts "#{Location.count} locations created."
+# puts "#{Location.count} locations created."
 
-# 72.times do
-#     Food.create!(name: Faker::Food.dish, cuisine: cuisine.sample, description: Faker::Food.description, food_stall: Faker::Movies::HarryPotter.location, img_url: images.sample , rating: rand(1..10), location_id: rand(1..9), user_id: rand(1..5))
-# end
+72.times do
+    Food.create!(name: Faker::Food.dish, cuisine: cuisine.sample, description: Faker::Food.description, food_stall: Faker::Movies::HarryPotter.location, img_url: images.sample , rating: rand(1..10), location_id: rand(1..9), user_id: rand(1..4))
+end
 
-# puts "#{Food.count} foods created."
+puts "#{Food.count} foods created."
 
-# 300.times do
-#     Comment.create!(message: Faker::Movies::HarryPotter.quote, user_id: rand(1..5), food_id: rand(1..72))
-# end
+300.times do
+    Comment.create!(message: Faker::Movies::HarryPotter.quote, user_id: rand(1..4), food_id: rand(1..72))
+end
 
-# puts "#{Comment.count} comments created."
+puts "#{Comment.count} comments created."
