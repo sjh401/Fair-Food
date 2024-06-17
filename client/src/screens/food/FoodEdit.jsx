@@ -171,7 +171,6 @@ export default function FoodEdit(props) {
                     <TextField 
                         className={(darkMode === true) ? classes.textDark : classes.text}
                         required 
-                        id="outlined-basic" 
                         label="Food Name" 
                         name="name"
                         variant="outlined"
@@ -205,7 +204,6 @@ export default function FoodEdit(props) {
                     <TextField 
                         required 
                         className={(darkMode === true) ? classes.textDark : classes.text}
-                        id="outlined-basic" 
                         label="Where to find it?" 
                         name="food_stall"
                         variant="outlined"
@@ -214,7 +212,6 @@ export default function FoodEdit(props) {
                     <TextField 
                         required 
                         className={(darkMode === true) ? classes.textDark : classes.text}
-                        id="outlined-basic" 
                         label="Food Description" 
                         name="description"
                         variant="outlined"
@@ -223,7 +220,6 @@ export default function FoodEdit(props) {
                     <TextField 
                         required 
                         className={(darkMode === true) ? classes.textDark : classes.text}
-                        id="outlined-basic" 
                         label="Image" 
                         name="img_url"
                         variant="outlined"

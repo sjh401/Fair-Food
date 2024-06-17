@@ -73,7 +73,6 @@ export default function Contact(props) {
                 <TextField 
                     className={classes.text}
                     required 
-                    id="outlined-basic" 
                     label="Name" 
                     name="name"
                     variant="outlined"
@@ -83,7 +82,6 @@ export default function Contact(props) {
                 <TextField 
                     className={classes.text}
                     required 
-                    id="outlined-basic" 
                     label="Email" 
                     name="email"
                     variant="outlined"
@@ -93,7 +91,6 @@ export default function Contact(props) {
                 <TextField 
                     required 
                     className={classes.text}
-                    id="outlined-basic" 
                     label="Message" 
                     name="message"
                     variant="outlined"

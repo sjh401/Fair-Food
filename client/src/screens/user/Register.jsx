@@ -60,7 +60,6 @@ export default function Register(props) {
                     <br/>
                     <TextField 
                         required 
-                        id="outlined-basic" 
                         label="Username"
                         name="username"
                         variant="outlined" 
@@ -69,7 +68,6 @@ export default function Register(props) {
                     <br/>
                     <TextField 
                         required 
-                        id="outlined-basic" 
                         type="email"
                         label="Email" 
                         name="email"
@@ -79,7 +77,6 @@ export default function Register(props) {
                     <br/>
                     <TextField 
                         required 
-                        id="outlined-basic" 
                         type="password"
                         label="Password" 
                         name="password"

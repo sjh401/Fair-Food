@@ -100,7 +100,6 @@ export default function CommentEdit(props) {
                 <TextField 
                     className={classes.text}
                     required 
-                    id="outlined-basic" 
                     label="Message" 
                     variant="outlined"
                     type="text"

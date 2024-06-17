@@ -105,8 +105,7 @@ export default function CommentCard(props) {
                     }}>
                         <TextField 
                             required 
-                            className={classes.text}
-                            id="outlined-basic" 
+                            className={classes.text} 
                             label="Message" 
                             name="message"
                             variant="outlined"

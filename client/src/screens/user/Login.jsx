@@ -60,7 +60,6 @@ export default function Login(props) {
                     <br/>
                     <TextField 
                         required 
-                        id="outlined-basic" 
                         label="Username"
                         name="username"
                         variant="outlined" 
@@ -69,7 +68,6 @@ export default function Login(props) {
                     <br/>
                     <TextField 
                         required 
-                        id="outlined-basic" 
                         type="password"
                         label="Password" 
                         name="password"
