@@ -18,6 +18,7 @@ function App() {
     const fetchUsers = async () => {
       const users = await getUsers();
       setAllUsers(users);
+      // console.log(users);
     }
     fetchUsers();
   },[])

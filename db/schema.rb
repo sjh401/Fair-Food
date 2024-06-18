@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_11_08_184759) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin"
+    # t.boolean "admin"
   end
 
   add_foreign_key "comments", "comments"
